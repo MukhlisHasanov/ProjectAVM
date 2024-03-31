@@ -1,8 +1,3 @@
-/**
- * ProjectA
- * @author Valerian
- * @version 24.03.2024
- */
 
 public class ShoppingCart {
     String nameOfProduct;
