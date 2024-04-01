@@ -1,4 +1,10 @@
 package AVM;
+/**
+ * ProjectAVM
+ * @author Valerian
+ * @version 01.04.2024
+ */
+
 
 public class Personal {
     String name;
