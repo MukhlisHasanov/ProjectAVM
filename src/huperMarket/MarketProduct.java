@@ -27,6 +27,6 @@ public class MarketProduct {
 
     @Override
     public String toString() {
-        return "{ product=" + product + ", " + type + ", " + quantity + '}';
+        return "{product= " + product + ", " + type + ", " + quantity + '}';
     }
 }

@@ -28,8 +28,26 @@ public class Warehouse {
         }
     }
 
+    public int indexOf(Product product) {
+        int idx = 0;
+        for (MarketProduct pac : products) {
+            if (pac.getProduct().equals(product)) {
+                return idx;
+            }
+        }
+        return -1;
+    }
+
+    public void del(Product product) {
+        products.remove(indexOf(product));
+    }
+
     @Override
     public String toString() {
-        return "Warehouse" + products;
+        StringBuilder str = new StringBuilder("Warehouse\n");
+        for (MarketProduct pac : products) {
+            str.append(pac + "\n");
+        }
+        return str.toString();
     }
 }

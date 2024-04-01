@@ -20,5 +20,8 @@ public class Main {
         warehouse.add(laptop, "computer", 15);
         warehouse.add(bread, "food", 25);
         System.out.println(warehouse);
+        // remove
+        warehouse.del(tv);
+        System.out.println(warehouse);
     }
 }
