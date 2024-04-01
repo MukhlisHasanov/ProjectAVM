@@ -1,11 +1,15 @@
+package general;
+
 public class Client {
     String name;
     int id;
+    // TODO write checker id
+    // TODO write automated id++
     int age;
 
-    public Client(String name, int phoneNumber, int age) {
+    public Client(String name, int id, int age) {
         this.name = name;
-        this.id = phoneNumber;
+        this.id = id;
         this.age = age;
     }
 
@@ -31,5 +35,14 @@ public class Client {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", age=" + age +
+                '}';
     }
 }

@@ -1,3 +1,5 @@
+package general;
+
 public class Personal {
     String name;
     String department;

@@ -1,3 +1,5 @@
+package general;
+
 public class Order {
     int id;
     int quantity;
