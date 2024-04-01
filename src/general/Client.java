@@ -1,3 +1,5 @@
+package general;
+
 public class Client {
     String name;
     int id;

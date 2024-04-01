@@ -1,3 +1,5 @@
+import general.Client;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +15,7 @@ public class GanjlikMall {
         }
 
         for (Client client : clients) {
-            System.out.println("Client: " + client.getName() + ", ID: " + client.getId() + ", Age: " + client.getAge());
+            System.out.println("general.Client: " + client.getName() + ", ID: " + client.getId() + ", Age: " + client.getAge());
             // client.buy(laptop);
             // andrey.buy(cheese);
             // mukhlis.watch(movie);
