@@ -2,20 +2,21 @@ package AVM;
 /**
  * ProjectAVM
  * @author Valerian
- * @version 01.04.2024
+ * @version 02.04.2024
  */
 
 
-public class Product {
-    int id;
-    String name;
-    float price;
-    String typeOfProduct;
+public class Product extends ProductCount{
 
-    public Product(int id, String name, float price, String typeOfProduct) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.typeOfProduct = typeOfProduct;
+    public String name;
+    public float price;
+
+    public Product(Product product, int count) {
+        super(product, count);
+    }
+
+    @Override
+    public String toString() {
+        return "{" + name + ", " + price + '}';
     }
 }
