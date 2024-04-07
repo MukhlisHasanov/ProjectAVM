@@ -1,3 +1,4 @@
+import cinema.CinemaHouse;
 import general.Product;
 import huperMarket.Warehouse;
 
@@ -8,20 +9,22 @@ public class Main {
         Product bread = new Product("Bublik", 1.98f);
         Product meat = new Product("Beef", 6.50f);
 
-        Warehouse warehouse= new Warehouse(1);
-        warehouse.add(tv, "household", 50);
-        warehouse.add(laptop, "computer", 10);
+        CinemaHouse cinemaHouse = new CinemaHouse();
+        Warehouse warehouse= new Warehouse();
+        warehouse.add(1, tv, "household", 50);
+        warehouse.add(2, laptop, "computer", 10);
         System.out.println(warehouse);
-        warehouse.add(tv, "household", 40);
+        warehouse.add(1, tv, "household", 40);
         System.out.println(warehouse);
-        warehouse.add(bread, "food", 100);
-        warehouse.add(meat, "food", 15);
+        warehouse.add(3, bread, "food", 100);
+        warehouse.add(4, meat, "food", 15);
         System.out.println(warehouse);
-        warehouse.add(laptop, "computer", 15);
-        warehouse.add(bread, "food", 25);
+        warehouse.add(2, laptop, "computer", 15);
+        warehouse.add(3, bread, "food", 25);
         System.out.println(warehouse);
         // remove
         warehouse.del(tv);
         System.out.println(warehouse);
+        
     }
 }

@@ -6,32 +6,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse {
-    private int id;
     public List<MarketProduct> products;
 
-    public Warehouse(int id) {
-        this.id = id;
+    public Warehouse() {
         this.products = new ArrayList<>();
     }
 
-    public void add(Product product, String type, int quantity) {
+    public void add(int id, Product product, String type, int quantity) {
         boolean found = false;
-        for (MarketProduct pac : products) {
-            if (pac.getProduct().equals(product)) {
-                pac.setQuantity(pac.getQuantity() + quantity);
+        for (MarketProduct item : products) {
+            if (item.getProduct().equals(product)) {
+                item.setQuantity(item.getQuantity() + quantity);
                 found = true;
                 return;
             }
         }
         if (!found) {
-            products.add(new MarketProduct(product, type, quantity));
+            products.add(new MarketProduct(id, product, type, quantity));
         }
     }
 
     public int indexOf(Product product) {
         int idx = 0;
-        for (MarketProduct pac : products) {
-            if (pac.getProduct().equals(product)) {
+        for (MarketProduct item : products) {
+            if (item.getProduct().equals(product)) {
                 return idx;
             }
         }

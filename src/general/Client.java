@@ -1,5 +1,7 @@
 package general;
 
+import java.util.List;
+
 public class Client {
     String name;
     int id;

@@ -3,11 +3,13 @@ package huperMarket;
 import general.Product;
 
 public class MarketProduct {
+    private int id;
     public Product product;
     private String type;
     private int quantity;
 
-    public MarketProduct(Product product, String type, int quantity) {
+    public MarketProduct(int id, Product product, String type, int quantity) {
+        this.id = id;
         this.product = product;
         this.type = type;
         this.quantity = quantity;
@@ -27,6 +29,6 @@ public class MarketProduct {
 
     @Override
     public String toString() {
-        return "{product= " + product + ", " + type + ", " + quantity + '}';
+        return "product= [" + product + ", " + type + ", " + quantity + ']';
     }
 }
