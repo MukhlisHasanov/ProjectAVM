@@ -1,25 +1,20 @@
 import general.Client;
-
-import java.util.ArrayList;
-import java.util.List;
+import general.ClientManagement;
 
 public class GanjlikMall {
     public static void main(String[] args) {
-        List<Client> clients = new ArrayList<>();
-        String[] names = {"Valerian", "Mukhlis", "Andrey", "Alexander", "Sergey"};
-        int[] ids = {00001, 00002, 00003, 00004, 00005};
-        int[] ages = {38, 30, 39, 41, 42};
+        ClientManagement clientManagement = new ClientManagement();
 
-        for (int i = 0; i < names.length; i++) {
-            clients.add(new Client(names[i], ids[i], ages[i]));
-        }
+        Client cl1 = new Client("V", 1, 10);
+        Client cl2 = new Client("M", 2, 9);
+        Client cl3 = new Client("A", 3, 11);
+        Client cl4 = new Client("A", 4, 14);
 
-        for (Client client : clients) {
-            System.out.println("general.Client: " + client.getName() + ", ID: " + client.getId() + ", Age: " + client.getAge());
-            // client.buy(laptop);
-            // andrey.buy(cheese);
-            // mukhlis.watch(movie);
-            // clients.giveDiscount(15);
-        }
+        clientManagement.addClient(cl1);
+        clientManagement.addClient(cl2);
+        clientManagement.addClient(cl3);
+        clientManagement.addClient(cl4);
+        clientManagement.removeClientById(4);
+        clientManagement.printClients();
     }
 }
