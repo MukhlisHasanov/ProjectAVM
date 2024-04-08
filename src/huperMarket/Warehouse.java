@@ -5,32 +5,54 @@ import general.Product;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Warehouse {
+public class Warehouse extends MarketProduct{
     public List<MarketProduct> products;
 
-    public Warehouse() {
-        this.products = new ArrayList<>();
+    public Warehouse(int id, Product product, String type, int quantity) {
+        super(id, product, type, quantity);
+        super.products = new ArrayList<>();
     }
 
-    public void add(int id, Product product, String type, int quantity) {
-        boolean found = false;
-        for (MarketProduct item : products) {
-            if (item.getProduct().equals(product)) {
-                item.setQuantity(item.getQuantity() + quantity);
-                found = true;
-                return;
-            }
+    public Warehouse() {
+    }
+
+    public boolean add(Product product, int quantity) {
+        int idx = indexOf(product);
+        if (idx >= 0) {
+            MarketProduct temp = products.get(idx);
+            temp.setQuantity(temp.getQuantity() + quantity);
+            products.set(idx, temp);
+            return true;
+        } else {
+            return false;
         }
-        if (!found) {
-            products.add(new MarketProduct(id, product, type, quantity));
+    }
+
+    public boolean add(int id, int quantity) {
+        int idx = indexOf(id);
+        if (idx >= 0) {
+            MarketProduct temp = products.get(idx);
+            temp.setQuantity(temp.getQuantity() + quantity);
+            products.set(idx, temp);
+            return true;
+        } else {
+            return false;
         }
     }
 
     public int indexOf(Product product) {
-        int idx = 0;
         for (MarketProduct item : products) {
             if (item.getProduct().equals(product)) {
-                return idx;
+                return products.indexOf(item);
+            }
+        }
+        return -1;
+    }
+
+    public int indexOf(int id) {
+        for (MarketProduct item : products) {
+            if (item.getId() == id) {
+                return products.indexOf(item);
             }
         }
         return -1;
@@ -40,12 +62,16 @@ public class Warehouse {
         products.remove(indexOf(product));
     }
 
-    @Override
-    public String toString() {
-        StringBuilder str = new StringBuilder("Warehouse\n");
-        for (MarketProduct pac : products) {
-            str.append(pac + "\n");
-        }
-        return str.toString();
+    public void del(int id) {
+        products.remove(indexOf(id));
     }
+
+//    @Override
+//    public String toString() {
+//        StringBuilder str = new StringBuilder("Warehouse\n");
+//        for (MarketProduct pac : products) {
+//            str.append(pac + "\n");
+//        }
+//        return str.toString();
+//    }
 }

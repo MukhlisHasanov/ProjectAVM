@@ -12,6 +12,7 @@ public class Main {
         CinemaHouse cinemaHouse = new CinemaHouse();
         Warehouse warehouse= new Warehouse();
         warehouse.add(1, tv, "household", 50);
+        System.out.println(warehouse);
         warehouse.add(2, laptop, "computer", 10);
         System.out.println(warehouse);
         warehouse.add(1, tv, "household", 40);
@@ -25,6 +26,11 @@ public class Main {
         // remove
         warehouse.del(tv);
         System.out.println(warehouse);
-        
+        warehouse.add(laptop, 50);
+        warehouse.add(3, 50);
+        warehouse.add(4, 50);
+        System.out.println(warehouse);
+        warehouse.del(3);
+        System.out.println(warehouse);
     }
 }
