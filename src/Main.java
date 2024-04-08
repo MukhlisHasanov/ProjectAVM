@@ -25,6 +25,12 @@ public class Main {
         // remove
         warehouse.del(tv);
         System.out.println(warehouse);
+        warehouse.add(laptop, 50);
+        warehouse.add(3, 50);
+        warehouse.add(4, 50);
+        System.out.println(warehouse);
+        warehouse.del(3);
+        System.out.println(warehouse);
         
     }
 }

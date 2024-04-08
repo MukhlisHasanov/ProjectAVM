@@ -23,6 +23,10 @@ public class MarketProduct {
         return quantity;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
