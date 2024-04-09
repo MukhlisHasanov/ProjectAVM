@@ -12,6 +12,21 @@ public class Warehouse {
         this.products = new ArrayList<>();
     }
 
+    public void delOfOrder(List<MarketProduct> products) {
+        for (MarketProduct buyList : products) {
+            boolean found = false;
+            for (MarketProduct productList : this.products) {
+                if (productList.getProduct().equals(buyList.getProduct())) {
+                    if (productList.getQuantity() >= buyList.getQuantity()) {
+                        productList.setQuantity(productList.getQuantity() - buyList.getQuantity());
+                        found = true;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
     public void add(int id, Product product, String type, int quantity) {
         boolean found = false;
         for (MarketProduct item : products) {
