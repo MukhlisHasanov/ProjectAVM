@@ -7,12 +7,8 @@ import java.util.List;
 public class ClientManagement {
     private List<Client> clients;
 
-    public ClientManagement() {
-        clients = new ArrayList<>();
-    }
-
-    public void addClient(Client client) {
-        clients.add(client);
+    public ClientManagement(List<Client> clients) {
+        this.clients = clients;
     }
 
     public void removeClientById(int id) {
