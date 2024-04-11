@@ -1,10 +1,4 @@
-package AVM;
-/**
- * ProjectAVM
- * @author Valerian
- * @version 01.04.2024
- */
-
+package src.general;
 
 public class Client {
     String name;
@@ -45,10 +39,9 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
+        return  "[name='" + name + '\'' +
                 ", id=" + id +
-                ", age=" + age +
-                '}';
+                ", age=" + age + ']';
     }
 }
+

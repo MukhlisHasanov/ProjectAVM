@@ -1,4 +1,4 @@
-package AVM;
+package src.general;
 
 public class Order {
     int id;

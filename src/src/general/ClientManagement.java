@@ -1,18 +1,17 @@
-package AVM;
-import java.util.ArrayList;
+package src.general;
 import java.util.Iterator;
 import java.util.List;
 
 public class ClientManagement {
     private List<Client> clients;
 
-    public ClientManagement() {
-        clients = new ArrayList<>();
+    public ClientManagement(List<Client> clients) {
+        this.clients = clients;
     }
-
-    public void addClient(Client client) {
-        clients.add(client);
-    }
+//
+//    public void addClient(Client client) {
+//        clients.add(client);
+//    }
 
     public void removeClientById(int id) {
         Iterator<Client> iterator = clients.iterator();
@@ -33,3 +32,4 @@ public class ClientManagement {
         }
     }
 }
+
