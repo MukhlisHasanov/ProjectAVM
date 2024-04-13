@@ -3,7 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ClientManagement {
-    private List<Client> clients;
+    public List<Client> clients;
 
     public ClientManagement(List<Client> clients) {
         this.clients = clients;
