@@ -14,7 +14,7 @@ public class Order {
         this.shoppingList = new ArrayList<>();
     }
 
-    public void addBayProduct(MarketProduct product) {
+    public void addBuyProduct(MarketProduct product) {      // adding a product that the client buys
         shoppingList.add(product);
     }
 

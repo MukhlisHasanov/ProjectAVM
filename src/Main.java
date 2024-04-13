@@ -1,5 +1,6 @@
 import cinema.CinemaHouse;
 import general.Client;
+import general.ClientManagement;
 import general.Product;
 import huperMarket.MarketProduct;
 import huperMarket.Order;
@@ -11,11 +12,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        List<Client> clients = new ArrayList<>(List.of(
-                new Client("V", 1, 10),
-                new Client("M", 2, 9),
-                new Client("A", 3, 11),
-                new Client("A", 4, 14)));
+        ClientManagement clientManagement = new ClientManagement();
+        clientManagement.add("V", 10);
+        clientManagement.add("M", 9);
+        clientManagement.add("A", 11);
+        clientManagement.add("A", 14);
 
         Product tv = new Product("Samsung 34'", 800);
         Product laptop = new Product("Lenovo T590", 1000);
@@ -45,12 +46,12 @@ public class Main {
         warehouse.del(3);
         System.out.println(warehouse);
 
-        List<Order> orders = new ArrayList<>();
-        Order order = new Order(clients.get(1));
-        order.addBayProduct(new MarketProduct(2, laptop, "computer", 10));
-        order.addBayProduct(new MarketProduct(4, meat, "food", 15));
+        Order order = new Order(clientManagement.find(1));
+        order.addBuyProduct(new MarketProduct(2, laptop, "computer", 10));
+        order.addBuyProduct(new MarketProduct(4, meat, "food", 15));
         System.out.println(order);
         warehouse.delOfOrder(order.getShoppingList());
         System.out.println(warehouse);
+
     }
 }

@@ -3,15 +3,14 @@ package general;
 import java.util.List;
 
 public class Client {
-    String name;
     int id;
-    // TODO write checker id
-    // TODO write automated id++
+    String name;
     int age;
+    private static int idCounter = 0;
 
-    public Client(String name, int id, int age) {
+    public Client(String name, int age) {
+        this.id = ++idCounter;
         this.name = name;
-        this.id = id;
         this.age = age;
     }
 
@@ -25,10 +24,6 @@ public class Client {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getAge() {

@@ -1,15 +1,8 @@
 package general;
 
-public class Order {
-    int id;
-    int quantity;
-    String name;
-    float price;
+import huperMarket.MarketProduct;
 
-    public Order(int id, int quantity, String name, float price) {
-        this.id = id;
-        this.quantity = quantity;
-        this.name = name;
-        this.price = price;
-    }
+public class Order {
+
+
 }
