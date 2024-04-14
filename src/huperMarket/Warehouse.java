@@ -6,36 +6,85 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse {
-    private int id;
     public List<MarketProduct> products;
 
-    public Warehouse(int id) {
-        this.id = id;
+    public Warehouse() {
         this.products = new ArrayList<>();
     }
 
-    public void add(Product product, String type, int quantity) {
+    public void delOfOrder(List<MarketProduct> products) {
+        for (MarketProduct buyList : products) {
+            boolean found = false;
+            for (MarketProduct productList : this.products) {
+                if (productList.getProduct().equals(buyList.getProduct())) {
+                    if (productList.getQuantity() >= buyList.getQuantity()) {
+                        productList.setQuantity(productList.getQuantity() - buyList.getQuantity());
+                        found = true;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    public void add(int id, Product product, String type, int quantity) {
         boolean found = false;
-        for (MarketProduct pac : products) {
-            if (pac.getProduct().equals(product)) {
-                pac.setQuantity(pac.getQuantity() + quantity);
+        for (MarketProduct item : products) {
+            if (item.getProduct().equals(product)) {
+                item.setQuantity(item.getQuantity() + quantity);
                 found = true;
                 return;
             }
         }
         if (!found) {
-            products.add(new MarketProduct(product, type, quantity));
+            products.add(new MarketProduct(id, product, type, quantity));
+        }
+    }
+
+    public boolean add(Product product, int quantity) {
+        int idx = indexOf(product);
+        if (idx >= 0) {
+            MarketProduct temp = products.get(idx);
+            temp.setQuantity(temp.getQuantity() + quantity);
+            products.set(idx, temp);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean add(int id, int quantity) {
+        int idx = indexOf(id);
+        if (idx >= 0) {
+            MarketProduct temp = products.get(idx);
+            temp.setQuantity(temp.getQuantity() + quantity);
+            products.set(idx, temp);
+            return true;
+        } else {
+            return false;
         }
     }
 
     public int indexOf(Product product) {
-        int idx = 0;
-        for (MarketProduct pac : products) {
-            if (pac.getProduct().equals(product)) {
-                return idx;
+        for (MarketProduct item : products) {
+            if (item.getProduct().equals(product)) {
+                return products.indexOf(item);
             }
         }
         return -1;
+    }
+
+    public int indexOf(int id) {
+        for (MarketProduct item : products) {
+            if (item.getId() == id) {
+                return products.indexOf(item);
+            }
+        }
+        return -1;
+    }
+
+    public void del(int id) {
+        products.remove(indexOf(id));
     }
 
     public void del(Product product) {
