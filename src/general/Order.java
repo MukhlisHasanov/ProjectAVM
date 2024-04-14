@@ -1,4 +1,4 @@
-package src.general;
+package general;
 
 public class Order {
     int id;

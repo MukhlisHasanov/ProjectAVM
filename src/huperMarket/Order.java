@@ -1,6 +1,6 @@
-package src.huperMarket;
+package huperMarket;
 
-import src.general.Client;
+import general.Client;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class Order {
         this.shoppingList = new ArrayList<>();
     }
 
-    public void addBayProduct(MarketProduct product) {
+    public void addBuyProduct(MarketProduct product) {      // adding a product that the client buys
         shoppingList.add(product);
     }
 

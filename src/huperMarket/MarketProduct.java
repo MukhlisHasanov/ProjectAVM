@@ -1,6 +1,6 @@
-package src.huperMarket;
+package huperMarket;
 
-import src.general.Product;
+import general.Product;
 
 public class MarketProduct {
     private int id;
