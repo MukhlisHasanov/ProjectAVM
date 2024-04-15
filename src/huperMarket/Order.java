@@ -11,10 +11,11 @@ public class Order {
 
     public Order(Client client) {
         this.client = client;
-        this.shoppingList = new ArrayList<>();
+        shoppingList = new ArrayList<>();
     }
 
     public void addBuyProduct(MarketProduct product) {      // adding a product that the client buys
+
         shoppingList.add(product);
     }
 

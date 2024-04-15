@@ -4,14 +4,15 @@ import general.Product;
 
 public class MarketProduct {
     private int id;
-    public Product product;
     private String type;
+    public Product product;
     private int quantity;
+    private static int idCounter = 0;
 
-    public MarketProduct(int id, Product product, String type, int quantity) {
-        this.id = id;
-        this.product = product;
+    public MarketProduct( String type, Product product, int quantity) {
+        this.id = ++idCounter;
         this.type = type;
+        this.product = product;
         this.quantity = quantity;
     }
 
@@ -33,6 +34,6 @@ public class MarketProduct {
 
     @Override
     public String toString() {
-        return "product= [" + product + ", " + type + ", " + quantity + ']';
+        return "product= [" + id + ", " + type + ", " + product + ", " + quantity + ']';
     }
 }
