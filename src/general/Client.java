@@ -1,15 +1,16 @@
 package general;
 
-public class Client {
-    String name;
-    int id;
-    // TODO write checker id
-    // TODO write automated id++
-    int age;
+import java.util.List;
 
-    public Client(String name, int id, int age) {
+public class Client {
+    int id;
+    String name;
+    int age;
+    private static int idCounter = 0;
+
+    public Client(String name, int age) {
+        this.id = ++idCounter;
         this.name = name;
-        this.id = id;
         this.age = age;
     }
 
@@ -25,10 +26,6 @@ public class Client {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getAge() {
         return age;
     }
@@ -39,10 +36,8 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
+        return  "[name='" + name + '\'' +
                 ", id=" + id +
-                ", age=" + age +
-                '}';
+                ", age=" + age + ']';
     }
 }
