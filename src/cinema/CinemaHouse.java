@@ -1,6 +1,6 @@
 package cinema;
 
-import huperMarket.Warehouse;
+import general.BaseHouse;
 
-public class CinemaHouse extends Warehouse {
+public class CinemaHouse extends BaseHouse {
 }

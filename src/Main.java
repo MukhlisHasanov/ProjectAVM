@@ -1,20 +1,12 @@
 import cinema.CinemaHouse;
-import general.Client;
-import general.ClientManagement;
-import general.Initializer;
-import general.Product;
+import general.*;
 import huperMarket.MarketProduct;
-import huperMarket.Order;
-import huperMarket.Warehouse;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import huperMarket.WareHouse;
 
 public class Main {
     public static void main(String[] args) {
         CinemaHouse cinemaHouse = new CinemaHouse();
-        Warehouse warehouse= new Warehouse();
+        WareHouse warehouse= new WareHouse();
         ClientManagement clientManagement = new ClientManagement();
         Initializer initializer = new Initializer();
         initializer.initMarketProducts(warehouse);
@@ -25,13 +17,14 @@ public class Main {
         Product bread = new Product("Bublik", 1.98f);
         Product meat = new Product("Beef", 6.50f);
 
+        System.out.println(warehouse);
         warehouse.add("laptop", laptop, 10);
         System.out.println(warehouse);
         warehouse.add(new Product("Samsung 34", 800), 40);
         warehouse.add(2,20);
         System.out.println(warehouse);
-//        warehouse.add("food", bread, 100);
-//        warehouse.add("food", meat, 15);
+        warehouse.add("food", bread, 100);
+        warehouse.add("food", meat, 15);
         System.out.println(warehouse);
         warehouse.add("laptop", new Product("Lenovo T590", 1000), 15);
         warehouse.add("food", new Product("Bublik", 1.98f), 25);

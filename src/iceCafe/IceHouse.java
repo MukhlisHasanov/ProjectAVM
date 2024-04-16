@@ -5,7 +5,7 @@ package iceCafe;
  * @author Valerian
  * @version 14-04-24
  */
-import huperMarket.Warehouse;
+import general.BaseHouse;
 
-public class IceHouse extends Warehouse {
+public class IceHouse extends BaseHouse {
 }

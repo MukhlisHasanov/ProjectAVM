@@ -9,7 +9,7 @@ package iceCafe;
 
 import general.ClientManagement;
 import general.Product;
-import huperMarket.Order;
+import general.Order;
 
 public class IceCafe {
     public static void main(String[] args) {

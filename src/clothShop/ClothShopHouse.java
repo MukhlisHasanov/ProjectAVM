@@ -5,7 +5,7 @@ package clothShop;
  * @author Valerian
  * @version 14-04-24
  */
-import huperMarket.Warehouse;
+import general.BaseHouse;
 
-public class ClothShopHouse extends Warehouse {
+public class ClothShopHouse extends BaseHouse {
 }

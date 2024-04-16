@@ -2,7 +2,7 @@ package clothShop;
 
 import general.ClientManagement;
 import general.Product;
-import huperMarket.Order;
+import general.Order;
 
 public class ClothShop {
     public static void main(String[] args) {
