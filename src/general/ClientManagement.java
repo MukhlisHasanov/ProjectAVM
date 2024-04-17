@@ -15,6 +15,7 @@ public class ClientManagement {
         Client client = new Client(name, age);
         idMap.put(client.getId(),client);
         clients.add(client);
+        System.out.println("Client: " + name + " added to Client list");
     }
 
     public boolean delete(int id) {
@@ -34,6 +35,7 @@ public class ClientManagement {
         if (updClient != null) {
             updClient.setName(name);
             updClient.setAge(age);
+            System.out.println("Client id: " + id + " is changed. New data: " + updClient);
             return true;
         }
         return false;

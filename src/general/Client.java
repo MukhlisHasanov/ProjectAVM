@@ -3,9 +3,9 @@ package general;
 import java.util.List;
 
 public class Client {
-    int id;
-    String name;
-    int age;
+    private int id;
+    private String name;
+    private int age;
     private static int idCounter = 0;
 
     public Client(String name, int age) {
