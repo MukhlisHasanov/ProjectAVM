@@ -33,39 +33,36 @@ public class GanjlikMall {
         Map<String, String> idMap = new HashMap<>();
 
         System.out.println("WELCOME TO GANJLIK MALL AVM");
-        System.out.print("Please enter your id number");
+        System.out.print("Please enter your id number: ");
 
         //Filling in the initial data (can be replaced by loading from a database or file)
         idMap.put("1000", "Valerian");
 
-        System.out.print("Enter id number: ");
-        clientId = scanner.nextInt();
+        clientId = Integer.parseInt(scanner.nextLine());
 
-        if (idMap.containsKey(clientId)) {
-            System.out.println("Welcome, " + idMap.get(clientId) + "!");
+        if (idMap.containsKey(String.valueOf(clientId))) {
+            System.out.println("Welcome, " + idMap.get(String.valueOf(clientId)) + "!");
         } else {
             System.out.println("İd is missing.");
             System.out.print("Enter your name & age: ");
             name = scanner.nextLine();
             //System.out.print("Enter your age: ");
-            age = scanner.nextInt();
+            age = Integer.parseInt(scanner.nextLine());
             clientManagement.add(name, age);
-            scanner.nextLine(); // clearing the buffer after nextint
 
-            String newId = generateId(); // generating a new id
+            String newId = generateId(idCounter); // Pass idCounter for generation
             idMap.put(newId, name);
 
             System.out.println("Your new id: " + newId);
             System.out.println("Welcome, " + name + "!");
         }
-
-        scanner.close();
     }
 
-    // Генерация айди по порядку возрастания
-    private static String generateId() {
-        AtomicInteger idCounter = null;
+    // id generation in ascending order
+    private static String generateId(AtomicInteger idCounter) {
         return String.valueOf(idCounter.getAndIncrement());
+    }
+
 
 
 
@@ -109,5 +106,5 @@ public class GanjlikMall {
 //        } while (operation != 'x');
 //        System.out.println("Nice to meet you: " + client);
 //
-    }
+
 }
