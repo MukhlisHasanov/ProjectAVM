@@ -26,7 +26,7 @@ public class GanjlikMall {
         int clientId, age;
         String name;
         char operation;
-        final AtomicInteger idCounter = new AtomicInteger(1000);
+        final AtomicInteger idCounter = new AtomicInteger(1001);
 
         ClientManagement clientManagement = new ClientManagement();
         Scanner scanner = new Scanner(System.in);
@@ -45,16 +45,15 @@ public class GanjlikMall {
         } else {
             System.out.println("İd is missing.");
             System.out.print("Enter your name & age: ");
-            name = scanner.nextLine();
-            //System.out.print("Enter your age: ");
-            age = Integer.parseInt(scanner.nextLine());
+            name = scanner.next();
+            age = scanner.nextInt();
             clientManagement.add(name, age);
 
             String newId = generateId(idCounter); // Pass idCounter for generation
             idMap.put(newId, name);
 
             System.out.println("Your new id: " + newId);
-            System.out.println("Welcome, " + name + "!");
+            System.out.println("Welcome, " + name + " " + age + "!");
         }
     }
 
