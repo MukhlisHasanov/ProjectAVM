@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import cinema.CinemaHouse;
 import general.Client;
 import general.ClientManagement;
@@ -45,6 +46,21 @@ public class Main {
 //        System.out.println(warehouse);
 //        warehouse.delete(3);
 //        System.out.println(warehouse);
+=======
+import cinema.CinemaWareHouse;
+import general.*;
+import huperMarket.MarketOrder;
+import general.BaseWareHouse;
+
+public class Main {
+    public static void main(String[] args) {
+        CinemaWareHouse cinemaHouse = new CinemaWareHouse();
+        BaseWareHouse warehouse= new BaseWareHouse();
+        ClientManagement clientManagement = new ClientManagement();
+        Initializer initializer = new Initializer();
+        initializer.initMarketProducts(warehouse);
+        initializer.initClients(clientManagement);
+>>>>>>> Stashed changes
 
 //        Order order = new Order(clientManagement.find(1));
 //        order.addBuyProduct(new MarketProduct("laptop", laptop, 10));

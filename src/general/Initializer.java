@@ -1,10 +1,18 @@
 package general;
 
+<<<<<<< Updated upstream
 import huperMarket.Warehouse;
 
 public class Initializer {
 
     public Warehouse initMarketProducts(Warehouse warehouse) {
+=======
+import general.BaseWareHouse;
+
+public class Initializer {
+
+    public BaseWareHouse initMarketProducts(BaseWareHouse warehouse) {
+
 
         Product tv = new Product("Samsung 34", 800);
         Product laptop = new Product("Lenovo T590", 1000);
