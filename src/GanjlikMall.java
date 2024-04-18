@@ -11,18 +11,6 @@ public class GanjlikMall {
 
     public static void main(String[] args) {
 
-//        ClientManagement clientManagement = new ClientManagement();
-//        clientManagement.add("V", 10);
-//        clientManagement.add("M", 9);
-//        clientManagement.add("A", 11);
-//        clientManagement.add("A", 14);
-//        clientManagement.printClients();
-//        clientManagement.delete(4);
-//        clientManagement.printClients();
-//
-//        clientManagement.add("ATR", 33);
-//        clientManagement.printClients();
-
         int clientId, age;
         String name;
         char operation;
@@ -61,11 +49,6 @@ public class GanjlikMall {
     private static String generateId(AtomicInteger idCounter) {
         return String.valueOf(idCounter.getAndIncrement());
     }
-
-
-
-
-
 
 //        do {
 //            System.out.println("Enter operation ([a]dd, [d]elete, [u]pdate, [p]rint, [f]ind, e[x]it: ");
