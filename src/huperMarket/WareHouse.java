@@ -1,6 +1,6 @@
 package huperMarket;
 
-import general.BaseHouse;
+import general.BaseWareHouse;
 
-public class WareHouse extends BaseHouse {
+public class WareHouse extends BaseWareHouse {
 }

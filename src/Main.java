@@ -1,11 +1,11 @@
-import cinema.CinemaHouse;
+import cinema.CinemaWareHouse;
 import general.*;
-import huperMarket.MarketProduct;
+import huperMarket.MarketOrder;
 import huperMarket.WareHouse;
 
 public class Main {
     public static void main(String[] args) {
-        CinemaHouse cinemaHouse = new CinemaHouse();
+        CinemaWareHouse cinemaHouse = new CinemaWareHouse();
         WareHouse warehouse= new WareHouse();
         ClientManagement clientManagement = new ClientManagement();
         Initializer initializer = new Initializer();
@@ -38,12 +38,15 @@ public class Main {
         System.out.println(warehouse);
         warehouse.delete(3);
         System.out.println(warehouse);
+        warehouse.add("tv", new Product("Samsung 34", 800), 150);
+        System.out.println(warehouse);
 
-        Order order = new Order(clientManagement.find(1));
-        order.addBuyProduct(new MarketProduct("laptop", laptop, 10));
-        order.addBuyProduct(new MarketProduct("food", meat, 15));
+        MarketOrder order = new MarketOrder(clientManagement.find(1));
+        order.addBuyProduct(2, 15);
+        order.addBuyProduct(4, 30);
+        order.addBuyProduct(5,50);
         System.out.println(order);
-        warehouse.delOfOrder(order.getShoppingList());
+        //warehouse.delOfOrder(order.getOrderList());
         System.out.println(warehouse);
 
     }

@@ -5,7 +5,7 @@ package clothShop;
  * @author Valerian
  * @version 14-04-24
  */
-import general.BaseHouse;
+import general.BaseWareHouse;
 
-public class ClothShopHouse extends BaseHouse {
+public class ClothShopWareHouse extends BaseWareHouse {
 }
