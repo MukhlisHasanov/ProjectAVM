@@ -17,7 +17,7 @@ public class BaseWareHouse {
     }
 
 
-
+//TODO update of MarketProduct
     public void delOfOrder(List<BaseProduct> products) {
         for (BaseProduct buyList : products) {
             boolean found = false;

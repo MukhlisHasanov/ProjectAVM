@@ -6,12 +6,14 @@ import general.Client;
 import general.Order;
 
 public class MarketOrder extends BaseOrder {
-    public MarketOrder(Client client) {
+    private WareHouse wareHouse;
+    public MarketOrder(Client client, WareHouse wareHouse) {
         super(client);
+        this.wareHouse = wareHouse;
     }
 
-    public boolean addBuyProduct(int id, int quantity) {
-        BaseProduct product = new WareHouse().idMap.get(id);
+    public boolean addToOrder(int id, int quantity) {
+        BaseProduct product = wareHouse.idMap.get(id);
         Order order = new Order();
         if (product != null) {
             order.setId(id);
@@ -22,4 +24,15 @@ public class MarketOrder extends BaseOrder {
         }
         return false;
     }
+    public void removeFromOrder() {
+
+    }
+
+    public void updateOrder() {
+
+    }
+
+//    public MarketOrder printOrder() {
+//        return marketOrder;
+//    }
 }

@@ -41,10 +41,10 @@ public class Main {
         warehouse.add("tv", new Product("Samsung 34", 800), 150);
         System.out.println(warehouse);
 
-        MarketOrder order = new MarketOrder(clientManagement.find(1));
-        order.addBuyProduct(2, 15);
-        order.addBuyProduct(4, 30);
-        order.addBuyProduct(5,50);
+        MarketOrder order = new MarketOrder(clientManagement.find(1), warehouse);
+        order.addToOrder(2, 15);
+        order.addToOrder(4, 30);
+        order.addToOrder(5,50);
         System.out.println(order);
         //warehouse.delOfOrder(order.getOrderList());
         System.out.println(warehouse);
