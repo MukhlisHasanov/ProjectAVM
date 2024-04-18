@@ -1,29 +1,37 @@
 package general;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Order {
-    Client client;
-    List<BaseProduct> shoppingList;
+    protected int id;
+    protected Product product;
+    protected int quantity;
 
-    public Order(Client client) {
-        this.client = client;
-        shoppingList = new ArrayList<>();
+//    public Order(int id, Product product, int quantity) {
+//        this.id = id;
+//        this.product = product;
+//        this.quantity = quantity;
+//    }
+
+    public int getId() {
+        return id;
     }
 
-    public void addBuyProduct(BaseProduct product) {      // adding a product that the client buys
-
-        shoppingList.add(product);
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public List<BaseProduct> getShoppingList() {
-        return shoppingList;
+    public Product getProduct() {
+        return product;
     }
 
-    @Override
-    public String toString() {
-        return  "client=" + client +
-                "\nshoppingList=" + shoppingList;
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

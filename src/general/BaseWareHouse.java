@@ -5,12 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BaseHouse {
-    public List<BaseProduct> products;
-    Map<Integer, BaseProduct> idMap;
-    Map<Product, BaseProduct> productMap;
+public class BaseWareHouse {
+    protected List<BaseProduct> products;
+    public Map<Integer, BaseProduct> idMap;
+    protected Map<Product, BaseProduct> productMap;
 
-    public BaseHouse() {
+    public BaseWareHouse() {
         products = new ArrayList<>();
         idMap = new HashMap<>();
         productMap = new HashMap<>();
@@ -83,6 +83,10 @@ public class BaseHouse {
             return true;
         }
         return false;
+    }
+
+    public List<BaseProduct> getProducts() {
+        return products;
     }
 
     @Override
