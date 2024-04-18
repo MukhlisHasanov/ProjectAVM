@@ -8,13 +8,13 @@ package cinema;
 
 import general.ClientManagement;
 import general.Product;
-import huperMarket.Order;
+import huperMarket.MarketOrder;
 
 public class Cinema {
     public static void main(String[] args) {
         ClientManagement clientManagement = new ClientManagement();
         CinemaHouse cinemaHouse = new CinemaHouse();
-        Order order = new Order(clientManagement.find(2));
+        MarketOrder order = new MarketOrder(clientManagement.find(2));
         Product movie1 = new Product("Avatar", 50);
         Product movie2 = new Product("Back to the Future 3D", 70);
         cinemaHouse.add("Fantasy", movie1, 200);

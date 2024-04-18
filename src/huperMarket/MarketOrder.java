@@ -5,11 +5,11 @@ import general.Client;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Order {
+public class MarketOrder {
     Client client;
     List<MarketProduct> shoppingList;
 
-    public Order(Client client) {
+    public MarketOrder(Client client) {
         this.client = client;
         shoppingList = new ArrayList<>();
     }

@@ -9,13 +9,13 @@ package iceCafe;
 
 import general.ClientManagement;
 import general.Product;
-import huperMarket.Order;
+import huperMarket.MarketOrder;
 
 public class IceCafe {
     public static void main(String[] args) {
         ClientManagement clientManagement = new ClientManagement();
         IceHouse iceHouse = new IceHouse();
-        Order order = new Order(clientManagement.find(3));
+        MarketOrder order = new MarketOrder(clientManagement.find(3));
         Product Ice1 = new Product("chocolate", 3);
         Product Ice2 = new Product("strawberry with chocolate", 5);
         Product Cafe = new Product("latte macchiato", 3);

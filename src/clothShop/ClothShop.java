@@ -2,13 +2,13 @@ package clothShop;
 
 import general.ClientManagement;
 import general.Product;
-import huperMarket.Order;
+import huperMarket.MarketOrder;
 
 public class ClothShop {
     public static void main(String[] args) {
         ClientManagement clientManagement = new ClientManagement();
         ClothShopHouse clothShopHouse = new ClothShopHouse();
-        Order order = new Order(clientManagement.find(4));
+        MarketOrder order = new MarketOrder(clientManagement.find(4));
         Product jacket = new Product("Esprit", 500);
         Product trousers = new Product("Jeans", 90);
         clothShopHouse.add("Jacket", jacket, 30);

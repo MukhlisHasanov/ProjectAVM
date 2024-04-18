@@ -42,6 +42,7 @@ public class GanjlikMall {
 
             System.out.println("Your new id: " + newId);
             System.out.println("Welcome, " + name + " " + age + "!");
+
         }
     }
 
@@ -49,7 +50,10 @@ public class GanjlikMall {
     private static String generateId(AtomicInteger idCounter) {
         return String.valueOf(idCounter.getAndIncrement());
     }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 //        do {
 //            System.out.println("Enter operation ([a]dd, [d]elete, [u]pdate, [p]rint, [f]ind, e[x]it: ");
 //            operation = scanner.next().charAt(0);
