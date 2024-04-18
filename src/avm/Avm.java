@@ -1,10 +1,8 @@
-import general.Client;
+package avm;
+
 import general.ClientManagement;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class GanjlikMall {
+public class Avm {
     public static void main(String[] args) {
 
         ClientManagement clientManagement = new ClientManagement();
