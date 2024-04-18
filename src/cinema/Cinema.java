@@ -20,8 +20,8 @@ public class Cinema {
         cinemaHouse.add("Fantasy", movie1, 200);
         cinemaHouse.add("Fantasy", movie2,150);
         System.out.println(cinemaHouse);
-        order.addBuyProduct(new CinemaProduct("Fantasy", movie1,  5));
-        order.addBuyProduct(new CinemaProduct("Fantasy", movie2,1));
+        order.addBuyProduct(new CinemaProduct(1,"Fantasy", movie1,  5));
+        order.addBuyProduct(new CinemaProduct(2,"Fantasy", movie2,1));
         System.out.println(order);
         cinemaHouse.delOfOrder(order.getShoppingList());
         System.out.println(cinemaHouse);
