@@ -46,12 +46,12 @@ public class Main {
         warehouse.delete(3);
         System.out.println(warehouse);
 
-        Order order = new Order(clientManagement.find(1));
-        order.addBuyProduct(new MarketProduct("laptop", laptop, 10));
-        order.addBuyProduct(new MarketProduct("food", meat, 15));
-        System.out.println(order);
-        warehouse.delOfOrder(order.getShoppingList());
-        System.out.println(warehouse);
+//        Order order = new Order(clientManagement.find(1));
+//        order.addBuyProduct(new MarketProduct("laptop", laptop, 10));
+//        order.addBuyProduct(new MarketProduct("food", meat, 15));
+//        System.out.println(order);
+//        warehouse.delOfOrder(order.getShoppingList());
+//        System.out.println(warehouse);
 
     }
 }

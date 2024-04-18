@@ -5,7 +5,13 @@ package iceCafe;
  * @author Valerian
  * @version 14-04-24
  */
+<<<<<<< Updated upstream
 import huperMarket.Warehouse;
 
 public class IceHouse extends Warehouse {
+=======
+import general.BaseWareHouse;
+
+public class IceHouse extends BaseWareHouse {
+>>>>>>> Stashed changes
 }
