@@ -4,20 +4,19 @@ import java.util.Scanner;
 
 public class AvmController {
     private MarketController marketController;
-    private CafeController cafeController;
-    private ShopController shopController;
+    //    private CafeController cafeController;
+//    private ShopController shopController;
     private CinemaController cinemaController;
     private Scanner scanner;
 
     public AvmController(final MarketController marketController,
-                         final CafeController cafeController,
-                         final ShopController shopController,
-                         final CinemaController cinemaController,
-                         Scanner scanner) {
+//                         final CafeController cafeController,
+//                         final ShopController shopController,
+                         CinemaController cinemaController) {
         this.marketController = marketController;
-        this.cafeController = cafeController;
-        this.shopController = shopController;
-        this.cinemaController = cinemaController;
+//        this.cafeController = cafeController;
+//        this.shopController = shopController;
+        this.cinemaController = this.cinemaController;
         this.scanner = new Scanner(System.in);
     }
 
@@ -30,14 +29,15 @@ public class AvmController {
                 case 'h':
                     System.out.println("Welcome to AVM Hypermarket!");
                     break;
-                case 'i':
+                case 'c':
                     System.out.println("Welcome to AVM Ice Cafe!");
                     break;
                 case 's':
                     System.out.println("Welcome to AVM Cloth Shop!");
                     break;
-                case 'c':
+                case 'i':
                     System.out.println("Welcome to AVM Cinema!");
+
                     break;
                 case 'x':
                     System.out.println("Goodbye!");
@@ -49,8 +49,8 @@ public class AvmController {
         System.out.println("Exit.");
     }
 
-    private void MarketController() {
-        char oper;
+//    private void MarketController() {
+//        char oper;
 
-    }
 }
+

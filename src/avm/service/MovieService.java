@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 public class MovieService {
-    private Map<Integer, Movie> movieMap;
+    private static Map<Integer, Movie> movieMap;
 
     public MovieService() {
         movieMap = new HashMap<>();
     }
 
-    public void init() {
+    public static void init() {
         List<Movie> movies = new ArrayList<>();
         movies.addAll(List.of(
                 new Movie("Avatar", "Fantasy", 50),

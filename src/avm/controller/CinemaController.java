@@ -17,7 +17,7 @@ public class CinemaController {
 //    public static void main(String[] args) {
 //        System.out.println("Welcome to our Ganjlik movie theater.");
 
-    private void cinemaServiceMenu() {
+    public void cinemaServiceMenu() {
         char cmd;
         String[] input;
         String name, genre;

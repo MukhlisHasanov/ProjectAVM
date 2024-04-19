@@ -1,6 +1,10 @@
 package avm;
 
+import avm.controller.AvmController;
+import avm.controller.CinemaController;
+import avm.controller.MarketController;
 import general.ClientManagement;
+import general.Initializer;
 
 public class Avm {
     public static void main(String[] args) {
@@ -22,5 +26,12 @@ public class Avm {
 //        clientManagement.addClient(cl2);
 //        clientManagement.addClient(cl3);
 //        clientManagement.addClient(cl4);
+        MarketController marketController = new MarketController();
+        CinemaController cinemaController = new CinemaController();
+        Initializer.initMovie();
+//        AvmController controller = new AvmController(marketController, cinemaController);
+//        controller.run();
+        CinemaController controller = new CinemaController();
+        controller.cinemaServiceMenu();
     }
 }
