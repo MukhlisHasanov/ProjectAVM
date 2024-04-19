@@ -1,6 +1,6 @@
 package avm.service;
 
-import avm.data.Movie;
+import avm.domain.Movie;
 
 import java.util.ArrayList;
 import java.util.HashMap;

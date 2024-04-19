@@ -1,4 +1,4 @@
-package avm.data;
+package avm.domain;
 
 public class Movie {
     private int id;

@@ -1,13 +1,13 @@
-package general;
-
-public class Personal {
-    String name;
-    String department;
-    int age;
-
-    public Personal(String name, String department, int age) {
-        this.name = name;
-        this.department = department;
-        this.age = age;
-    }
-}
+//package general;
+//
+//public class Personal {
+//    String name;
+//    String department;
+//    int age;
+//
+//    public Personal(String name, String department, int age) {
+//        this.name = name;
+//        this.department = department;
+//        this.age = age;
+//    }
+//}
