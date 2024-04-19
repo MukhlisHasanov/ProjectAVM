@@ -26,7 +26,6 @@ public class Avm {
 //        clientManagement.addClient(cl2);
 //        clientManagement.addClient(cl3);
 //        clientManagement.addClient(cl4);
-        MarketController marketController = new MarketController();
         CinemaController cinemaController = new CinemaController();
         Initializer.initMovie();
 //        AvmController controller = new AvmController(marketController, cinemaController);
