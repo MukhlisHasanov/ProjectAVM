@@ -3,9 +3,15 @@ package avm.products;
 public class MarketProduct extends BaseProduct {
     private int quantity;
     public MarketProduct(String name, float price, int quantity) {
-        super(name, price);
+        super( name, price);
         this.quantity = quantity;
     }
+
+    public MarketProduct(MarketProduct product) {
+        super(product.getName(), product.getPrice());
+        this.quantity = product.getQuantity();
+    }
+
 
     public int getQuantity() {
         return quantity;
@@ -15,17 +21,8 @@ public class MarketProduct extends BaseProduct {
         this.quantity = quantity;
     }
 
-    public void remove(int id) {
-    }
-
-    public void update(int quantity) {
-    }
-
     @Override
     public String toString() {
-        return "MarketProduct{" +
-                "product= [" + id + ", " + name + ", " + price + ", " + ']' +
-                "quantity=" + quantity +
-                '}';
+        return "[" + id + ", " + name + ", " + price + ", " + quantity + ']';
     }
 }

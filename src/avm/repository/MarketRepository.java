@@ -1,4 +1,4 @@
-package avm.domain;
+package avm.repository;
 
 import avm.products.MarketProduct;
 
@@ -27,7 +27,7 @@ public class MarketRepository {
         return marketMap.values();
     }
 
-    public void init() {
+    public void initMarket() {
         List<MarketProduct> marketProducts = new ArrayList<>(List.of(
                 new MarketProduct("Samsung 34", 800, 50),
                 new MarketProduct("Lenovo T590", 1000, 10),
@@ -61,8 +61,11 @@ public class MarketRepository {
 
     @Override
     public String toString() {
-        return "Market Journal: " +
-                "marketMap=" + marketMap +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("MarketRepository:\n");
+        marketMap.forEach((Integer, marketProduct) -> {
+            sb.append(marketProduct).append("\n");
+        });
+        return sb.toString();
     }
 }

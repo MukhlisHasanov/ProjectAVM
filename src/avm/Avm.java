@@ -1,16 +1,19 @@
 package avm;
 
 import avm.controller.AvmController;
-import avm.domain.MarketRepository;
+import avm.repository.MarketRepository;
 import avm.service.MarketService;
 import general.Client;
+import general.ClientManagement;
 
 
 public class Avm {
     public static void main(String[] args) {
+        ClientManagement clientManagement = new ClientManagement();
+        clientManagement.add("Valerian", 38);
         MarketRepository marketRepository = new MarketRepository();
-        MarketService marketService = new MarketService(new Client("Andrey", 28), marketRepository);
-        marketRepository.init();
+        MarketService marketService = new MarketService(clientManagement.find(1),marketRepository);
+        marketRepository.initMarket();
         new AvmController(marketService).run();
 
 

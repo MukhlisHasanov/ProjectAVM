@@ -1,4 +1,4 @@
-package avm.domain;
+package avm.repository;
 
 public class Movie {
     private int id;

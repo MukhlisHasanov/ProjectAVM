@@ -1,5 +1,7 @@
 package avm.controller;
 
+
+
 import avm.service.MarketService;
 
 import java.util.Scanner;
@@ -36,7 +38,7 @@ public class AvmController {
                     System.out.println("Goodbye!");
                     break;
                 default:
-                    System.out.println("Hope see you again!");
+                    System.out.println("Unrecognized command");
             }
         } while (cmd != 'x');
         System.out.println("Exit.");
