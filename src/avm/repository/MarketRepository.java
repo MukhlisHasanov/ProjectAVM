@@ -12,7 +12,7 @@ public class MarketRepository {
     }
 
     public void put(MarketProduct marketProduct) {
-        marketMap.put(marketProduct.getId(),marketProduct);
+        marketMap.put(marketProduct.getId(), marketProduct);
     }
 
     public MarketProduct get(int id) {

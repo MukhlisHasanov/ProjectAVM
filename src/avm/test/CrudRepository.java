@@ -1,4 +1,4 @@
-package avm.repository;
+package avm.test;
 
 import java.util.Collection;
 

@@ -11,17 +11,19 @@ import java.util.Map;
 
 
 public class MarketService {
+
     private Client client;
-    private MarketRepository repository;
+    private MarketService marketService;
+    private MarketRepository marketRepository;
     Map<Integer, MarketProduct> productList;
-    public MarketService(Client client, MarketRepository repository) {
+    public MarketService(Client client, MarketRepository marketRepository) {
         this.client = client;
-        this.repository = repository;
+        this.marketRepository = marketRepository;
         productList = new HashMap<>();
     }
 
     public boolean addToOrder(int id, int quantity) {
-        MarketProduct marketProduct = repository.get(id);
+        MarketProduct marketProduct = marketRepository.get(id);
         if (marketProduct != null && marketProduct.getQuantity() >= quantity) {
             if (productList.containsKey(id)) {
                 MarketProduct existingProduct = productList.get(id);
@@ -29,7 +31,7 @@ public class MarketService {
             } else {
                 MarketProduct newProduct = new MarketProduct(marketProduct);
                 newProduct.setQuantity(quantity);
-                newProduct.setId(newProduct.getId() - 1);
+                newProduct.setId(id);
                 productList.put(id, newProduct);
             }
             marketProduct.setQuantity(marketProduct.getQuantity() - quantity);
@@ -67,13 +69,12 @@ public class MarketService {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        System.out.println("Cart of " +
-                "client=" + client);
+        sb.append("Cart of client: " + client + "\n");
         sb.append("shopping Cart: \n");
         productList.forEach((Integer, marketProduct) -> {
-            sb.append(productList).append("\n");
+            sb.append(marketProduct).append("\n");
         });
-       return sb.toString();
+        return sb.toString();
     }
 
     public void print() {
@@ -81,6 +82,6 @@ public class MarketService {
     }
 
     public void productList() {
-        System.out.println(repository);
+        System.out.println(marketRepository);
     }
 }

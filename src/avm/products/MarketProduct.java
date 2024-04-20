@@ -3,7 +3,7 @@ package avm.products;
 public class MarketProduct extends BaseProduct {
     private int quantity;
     public MarketProduct(String name, float price, int quantity) {
-        super( name, price);
+        super(name, price);
         this.quantity = quantity;
     }
 
