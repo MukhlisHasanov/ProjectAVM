@@ -13,7 +13,6 @@ import java.util.Map;
 public class MarketService {
 
     private Client client;
-    private MarketService marketService;
     private MarketRepository marketRepository;
     Map<Integer, MarketProduct> productList;
     public MarketService(Client client, MarketRepository marketRepository) {
@@ -62,24 +61,17 @@ public class MarketService {
         }
     }
 
-    public void updateOrder() {
-
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Cart of client: " + client + "\n");
-        sb.append("shopping Cart: \n");
+        sb.append("shopping cart: \n");
         productList.forEach((Integer, marketProduct) -> {
             sb.append(marketProduct).append("\n");
         });
         return sb.toString();
     }
 
-    public void print() {
-        System.out.println(productList);
-    }
 
     public void productList() {
         System.out.println(marketRepository);

@@ -1,38 +1,42 @@
 package avm.controller;
-
-import avm.service.MarketService;
+/**
+ * AIT-TR, Cohort 42.1
+ * Project AVM/ClothShop
+ * @author Valerian
+ * @version 20-04-24
+ */
+import avm.service.ClothService;
 import java.util.Scanner;
 
-public class MarketController {
-    private MarketService service;
-    private Scanner scanner;
+public class ShopController {
+    public ClothService service;
+    public Scanner scanner;
 
-
-    public MarketController(MarketService service, Scanner scanner) {
+    public ShopController(ClothService service, Scanner scanner) {
         this.service = service;
         this.scanner = scanner;
     }
 
     public void run() {
-        char cmd;
+        char cdm;
         String[] input;
         int quantity;
         int id;
         do {
-            System.out.println("Market service: product [l]ist, cart: [a]dd, [r]emove, [p]rint, [b]ack: ");
-            cmd = scanner.nextLine().charAt(0);
-            switch (cmd) {
-                case 'l':
+            System.out.println("Cloth Shop: [1]show product list, [2]add, [3]remove, [4]print, [5]back: ");
+            cdm = scanner.nextLine().charAt(0);
+            switch (cdm) {
+                case '1':
                     service.productList();
                     break;
-                case 'a':
+                case '2':
                     System.out.print("Market service: add to cart: id & quantity: ");
                     input = scanner.nextLine().split("&");
                     id = Integer.valueOf(input[0].trim());
                     quantity = Integer.valueOf(input[1].trim());
                     service.addToOrder(id, quantity);
                     break;
-                case 'r':
+                case '3':
                     System.out.println("Market service: remove from cart: id & quantity: ");
                     input = scanner.nextLine().split("&");
                     if (input.length > 1) {
@@ -44,21 +48,21 @@ public class MarketController {
                         service.removeFromOrder(id);
                     }
                     break;
-//                case 'u':
+//                case '4':
 //                    System.out.println("Market service: update cart: id & quantity: ");
 //                    input = scanner.nextLine().split("&");
 //                    id = Integer.valueOf(input[0].trim());
 //                    quantity = Integer.valueOf(input[1].trim());
-//                    service.updateOrder(id, quantity);
+//                    service.update(id, quantity);
 //                    break;
-                case 'p':
-                    System.out.println(service);;
+                case '4':
+                    System.out.println(service);
                     break;
-                case 'b':
+                case '5':
                     break;
                 default:
-                    System.out.println("Unrecognized command: " + cmd);
+                    System.out.println("Unrecognized command:" + cdm);
             }
-        } while (cmd != 'b');
+        }while (cdm != '6');
     }
 }
