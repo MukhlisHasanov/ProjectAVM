@@ -7,7 +7,6 @@ package avm.products;
  */
 
 public class ClothProduct extends BaseProduct {
-    private static int idCounter = 0;
     private int size;
     private int quantity;
 
@@ -15,7 +14,6 @@ public class ClothProduct extends BaseProduct {
         super(name, price);
         this.size = size;
         this.quantity = quantity;
-        this.id = ++idCounter;
     }
 
     public ClothProduct(ClothProduct product) {
