@@ -17,14 +17,6 @@ public class MarketService {
         productList = new HashMap<>();
     }
 
-    public float sumOrder() {
-        float sum = 0.0f;
-        for (MarketProduct marketProduct : productList.values()) {
-            sum += marketProduct.getPrice() * marketProduct.getQuantity();
-        }
-        return sum;
-    }
-
     public boolean addToOrder(int id, int quantity) {
         MarketProduct marketProduct = marketRepository.get(id);
         if (marketProduct != null && marketProduct.getQuantity() >= quantity) {
