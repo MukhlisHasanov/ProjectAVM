@@ -61,6 +61,14 @@ public class MarketService {
         }
     }
 
+    public float sumOrder() {
+        float sum = 0.0f;
+        for (MarketProduct marketProduct : productList.values()) {
+            sum += marketProduct.getPrice() * marketProduct.getQuantity();
+        }
+        return sum;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
