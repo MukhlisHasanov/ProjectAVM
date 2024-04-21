@@ -6,6 +6,11 @@ import avm.products.Client;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * AIT-TR, cohort 42.1, Java Basic, Project AVM/Cafe
+ * @author Alexander Germanow
+ * @version Apr-2024
+ */
 public class CafeService {
     private Client client;
     private CafeRepository cafeRepository;
@@ -43,7 +48,7 @@ public class CafeService {
             int currentQuantity = product.getQuantity();
             productList.remove(id);
             cafeProduct.setQuantity(cafeProduct.getQuantity() + currentQuantity);
-            System.out.println("You removed: " + currentQuantity + " pcs, " + product.getName() + " from order");
+            System.out.println("You removed: " + currentQuantity + " pcs of " + product.getName() + " from order");
             return true;
         }
         return false;
@@ -62,7 +67,7 @@ public class CafeService {
                 product.setQuantity(newQuantity);
             }
             cafeProduct.setQuantity(cafeProduct.getQuantity() + quantityToRemove);
-            System.out.println("You removed: " + currentQuantity + " pcs, " + product.getName() + " from order");
+            System.out.println("You removed: " + currentQuantity + " pcs of " + product.getName() + " from order");
         }
     }
 

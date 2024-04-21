@@ -6,6 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * AIT-TR, cohort 42.1, Java Basic, Project AVM/General
+ * @author Andrey Hein
+ * @version Apr-2024
+ */
 public class ClientRepository {
     private Map<Integer, Client> clientMap;
 

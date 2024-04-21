@@ -3,6 +3,11 @@ package avm.repository;
 import avm.products.MarketProduct;
 import java.util.*;
 
+/**
+ * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Hypermarket
+ * @author Mukhlis
+ * @version Apr-2024
+ */
 public class MarketRepository {
     private Map<Integer, MarketProduct> marketMap;
 

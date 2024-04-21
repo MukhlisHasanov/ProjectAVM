@@ -1,11 +1,4 @@
 package avm.service;
-/**
- * AIT-TR, Cohort 42.1
- * Project AVM/ClothShop
- * @author Valerian
- * @version 20-04-24
- */
-
 
 import avm.repository.ClothRepository;
 import avm.products.ClothProduct;
@@ -13,6 +6,11 @@ import avm.products.Client;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * AIT-TR, Cohort 42.1, Java Basic, Project AVM/ClothShop
+ * @author Valerian
+ * @version Apr-2024
+ */
 public class ClothService {
     private Client client;
     private ClothRepository clothRepository;
@@ -38,15 +36,20 @@ public class ClothService {
                 productList.put(id, newProduct);
             }
             clothProduct.setQuantity(clothProduct.getQuantity() - quantity);
-            System.out.println("You added: " + quantity + ", " + clothProduct.getName() + ".");
+            System.out.println("You added: " + quantity + "pcs of " + clothProduct.getName() + " to shopping cart");
             return true;
         }
         return false;
     }
 
     public boolean removeFromOrder(int id) {
+        ClothProduct product = productList.get(id);
+        ClothProduct clothProduct = clothRepository.get(id);
         if (productList.containsKey(id)) {
+            int currentQuantity = product.getQuantity();
             productList.remove(id);
+            clothProduct.setQuantity(clothProduct.getQuantity() + currentQuantity);
+            System.out.println("You removed: " + currentQuantity + " pcs of " + product.getName() + " from shopping cart");
             return true;
         }
     return false;
@@ -64,7 +67,7 @@ public class ClothService {
                 product.setQuantity(newQuantity);
             }
             clothProduct.setQuantity(clothProduct.getQuantity() + quantityToRemove);
-            System.out.println("You removed: " + quantityToRemove + ", " + product.getName());
+            System.out.println("You removed: " + currentQuantity + " pcs of " + product.getName() + " from shopping cart");
         }
     }
 

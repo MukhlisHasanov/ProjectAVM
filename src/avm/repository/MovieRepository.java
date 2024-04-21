@@ -1,11 +1,13 @@
 package avm.repository;
 
-
-
 import avm.products.MovieProduct;
-
 import java.util.*;
 
+/**
+ * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Cinema
+ * @author Rodion
+ * @version Apr-2024
+ */
 public class MovieRepository {
     private Map<Integer, MovieProduct> movieMap;
 
@@ -23,11 +25,11 @@ public class MovieRepository {
 
     public void remove(int id) {
         movieMap.remove(id);
-    } // TODO maybe need to delete this code
+    }
 
     public Collection<MovieProduct> values() {
         return movieMap.values();
-    } // TODO maybe need to delete this code
+    }
 
     public void initMovie() {
         List<MovieProduct> movieProducts = new ArrayList<>(List.of(
@@ -44,7 +46,6 @@ public class MovieRepository {
         ));
         movieProducts.forEach(movieProduct -> put(movieProduct));
     }
-
 
     @Override
     public String toString() {

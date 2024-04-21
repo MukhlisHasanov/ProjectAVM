@@ -1,12 +1,16 @@
 package avm.service;
 
-import avm.products.MarketProduct;
 import avm.products.MovieProduct;
 import avm.products.Client;
 import java.util.HashMap;
 import java.util.Map;
 import avm.repository.MovieRepository;
 
+/**
+ * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Cinema
+ * @author Rodion
+ * @version Apr-2024
+ */
 public class CinemaService {
     private Client client;
     private MovieRepository movieRepository;
@@ -38,17 +42,24 @@ public class CinemaService {
     }
 
     public boolean removeFromOrder (int id) {
+        MovieProduct product = productList.get(id);
+        MovieProduct movieProduct = movieRepository.get(id);
         if (productList.containsKey(id)) {
+            int currentQuantity = product.getQuantity();
             productList.remove(id);
+            movieProduct.setQuantity(movieProduct.getQuantity() + currentQuantity);
+            System.out.println("You removed " + currentQuantity + " ticket(s) on Movie: " + product.getName());
             return true;
         }
         return false;
     }
+
     public void removeFromOrder(int id, int quantityToRemove) {
         if (productList.containsKey(id)) {
             MovieProduct product = productList.get(id);
             MovieProduct movieProduct = movieRepository.get(id);
             int currentQuantity = product.getQuantity();
+
             int newQuantity = currentQuantity - quantityToRemove;
             if (newQuantity <= 0) {
                 productList.remove(id);
@@ -56,7 +67,7 @@ public class CinemaService {
                 product.setQuantity(newQuantity);;
             }
             movieProduct.setQuantity(movieProduct.getQuantity() + quantityToRemove);
-            System.out.println("You removed " + quantityToRemove + " ticket(s) on Movie : " + product.getName());
+            System.out.println("You removed " + quantityToRemove + " ticket(s) on Movie: " + product.getName());
         }
     }
 
