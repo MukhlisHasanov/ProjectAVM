@@ -1,4 +1,6 @@
-package general;
+package avm.test;
+
+import avm.products.Client;
 
 import java.util.*;
 

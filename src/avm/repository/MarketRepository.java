@@ -1,7 +1,6 @@
 package avm.repository;
 
 import avm.products.MarketProduct;
-
 import java.util.*;
 
 public class MarketRepository {
@@ -23,9 +22,9 @@ public class MarketRepository {
         marketMap.remove(id);
     }
 
-    public Collection<MarketProduct> values() {
-        return marketMap.values();
-    }
+//    public Collection<MarketProduct> values() {
+//        return marketMap.values();
+//    }
 
     public void initMarket() {
         List<MarketProduct> marketProducts = new ArrayList<>(List.of(

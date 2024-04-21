@@ -1,7 +1,8 @@
 package avm.service;
 
+import avm.products.MarketProduct;
 import avm.products.MovieProduct;
-import general.Client;
+import avm.products.Client;
 import java.util.HashMap;
 import java.util.Map;
 import avm.repository.MovieRepository;
@@ -30,6 +31,7 @@ public class CinemaService {
                 productList.put(id, newProduct);
             }
             movieProduct.setQuantity(movieProduct.getQuantity() - quantity);
+            System.out.println("You added: " + quantity + " ticket(s) to movie: " + movieProduct.getName() + ". With price: " + movieProduct.getPrice());
             return true;
         }
         return false;
@@ -45,6 +47,7 @@ public class CinemaService {
     public void removeFromOrder(int id, int quantityToRemove) {
         if (productList.containsKey(id)) {
             MovieProduct product = productList.get(id);
+            MovieProduct movieProduct = movieRepository.get(id);
             int currentQuantity = product.getQuantity();
             int newQuantity = currentQuantity - quantityToRemove;
             if (newQuantity <= 0) {
@@ -52,9 +55,18 @@ public class CinemaService {
             } else {
                 product.setQuantity(newQuantity);;
             }
+            movieProduct.setQuantity(movieProduct.getQuantity() + quantityToRemove);
+            System.out.println("You removed " + quantityToRemove + " ticket(s) on Movie : " + product.getName());
         }
     }
 
+    public float sumOrder() {
+        float sum = 0.0f;
+        for (MovieProduct movieProduct : productList.values()) {
+            sum += movieProduct.getPrice() * movieProduct.getQuantity();
+        }
+        return sum;
+    }
 
     public void productList() {
         System.out.println(movieRepository);
@@ -63,7 +75,7 @@ public class CinemaService {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Customer cinema cart: " + client + "\n");
+        sb.append("\nCustomer cinema cart: " + client + "\n");
         sb.append("Shopping cart: \n");
         productList.forEach((Integer, movieProduct) -> {
             sb.append(movieProduct).append("\n");

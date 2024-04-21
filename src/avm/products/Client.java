@@ -1,6 +1,4 @@
-package general;
-
-import java.util.List;
+package avm.products;
 
 public class Client {
     int id;

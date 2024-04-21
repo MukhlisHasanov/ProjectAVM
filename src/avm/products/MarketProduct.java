@@ -15,7 +15,6 @@ public class MarketProduct extends BaseProduct {
         this.quantity = product.getQuantity();
     }
 
-
     public int getQuantity() {
         return quantity;
     }

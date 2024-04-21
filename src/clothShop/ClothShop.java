@@ -1,6 +1,6 @@
 //package clothShop;
 //
-//import general.ClientManagement;
+//import avm.test.ClientManagement;
 //import general.Product;
 //import general.BaseOrder;
 //

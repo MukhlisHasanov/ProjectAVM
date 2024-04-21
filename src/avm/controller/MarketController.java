@@ -7,7 +7,6 @@ public class MarketController {
     private MarketService service;
     private Scanner scanner;
 
-
     public MarketController(MarketService service, Scanner scanner) {
         this.service = service;
         this.scanner = scanner;
@@ -19,7 +18,7 @@ public class MarketController {
         int quantity;
         int id;
         do {
-            System.out.println("Market service: [1] show product list; operations with shopping cart: [2] add, [3] remove, [4] print, [0] back: ");
+            System.out.print("Market service: [1] show product list; operations with shopping cart: [2] add, [3] remove, [4] print, [0] back: ");
             cmd = scanner.nextLine().charAt(0);
             switch (cmd) {
                 case '1':
@@ -33,7 +32,7 @@ public class MarketController {
                     service.addToOrder(id, quantity);
                     break;
                 case '3':
-                    System.out.println("Market service: remove from cart: id & quantity: ");
+                    System.out.print("Market service: remove from cart: id & quantity: ");
                     input = scanner.nextLine().split("&");
                     if (input.length > 1) {
                         id = Integer.valueOf(input[0].trim());
@@ -44,15 +43,9 @@ public class MarketController {
                         service.removeFromOrder(id);
                     }
                     break;
-//                case 'u':
-//                    System.out.println("Market service: update cart: id & quantity: ");
-//                    input = scanner.nextLine().split("&");
-//                    id = Integer.valueOf(input[0].trim());
-//                    quantity = Integer.valueOf(input[1].trim());
-//                    service.updateOrder(id, quantity);
-//                    break;
                 case '4':
-                    System.out.println(service);;
+                    System.out.println(service);
+                    System.out.println("Amount to be paid: " + service.sumOrder() + " EUR" + "\n");
                     break;
                 case '0':
                     break;

@@ -6,7 +6,6 @@ package avm.repository;
  * @version 20-04-24
  */
 
-
 import avm.products.ClothProduct;
 
 import java.util.*;

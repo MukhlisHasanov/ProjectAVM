@@ -50,6 +50,7 @@ public class ShopController {
                     break;
                 case '4':
                     System.out.println(service);
+                    System.out.println("Amount to be paid: " + service.sumOrder() + " EUR" + "\n");
                     break;
                 case '0':
                     break;

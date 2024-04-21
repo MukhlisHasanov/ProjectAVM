@@ -1,7 +1,7 @@
 //package avm.test;
 //
 //import avm.test.MarketRepository;
-////import general.Client;
+////import avm.products.Client;
 //
 //import java.util.ArrayList;
 //import java.util.List;

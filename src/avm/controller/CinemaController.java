@@ -49,6 +49,7 @@ public class CinemaController {
                     break;
                 case 'p':
                     System.out.println(service);
+                    System.out.println("Amount to be paid: " + service.sumOrder() + " EUR" + "\n");
                     break;
                 case 'b':
                     break;

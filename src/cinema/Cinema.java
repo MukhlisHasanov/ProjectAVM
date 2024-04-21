@@ -6,7 +6,7 @@
 // * @version 14-04-24
 // */
 //
-//import general.ClientManagement;
+//import avm.test.ClientManagement;
 //import general.Product;
 //import general.BaseOrder;
 //

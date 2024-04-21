@@ -9,7 +9,7 @@ package avm.service;
 
 import avm.repository.ClothRepository;
 import avm.products.ClothProduct;
-import general.Client;
+import avm.products.Client;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,7 +24,7 @@ public class ClothService {
         productList = new HashMap<>();
     }
 
-    public boolean addToOrder(int id, int quantity) {
+    public boolean addToOrder(int id, int quantity, int size) {
         ClothProduct clothProduct = clothRepository.get(id);
         if (clothProduct != null && clothProduct.getQuantity() >= quantity) {
             if (productList.containsKey(id)) {
@@ -34,9 +34,11 @@ public class ClothService {
                 ClothProduct newProduct = new ClothProduct(clothProduct);
                 newProduct.setQuantity(quantity);
                 newProduct.setId(id);
+                newProduct.setSize(size);
                 productList.put(id, newProduct);
             }
             clothProduct.setQuantity(clothProduct.getQuantity() - quantity);
+            System.out.println("You added: " + quantity + ", " + clothProduct.getName() + ".");
             return true;
         }
         return false;
@@ -53,6 +55,7 @@ public class ClothService {
     public void removeFromOrder(int id, int quantityToRemove) {
         if (productList.containsKey(id)) {
             ClothProduct product = productList.get(id);
+            ClothProduct clothProduct = clothRepository.get(id);
             int currentQuantity = product.getQuantity();
             int newQuantity = currentQuantity - quantityToRemove;
             if (newQuantity <= 0) {
@@ -60,7 +63,17 @@ public class ClothService {
             } else {
                 product.setQuantity(newQuantity);
             }
+            clothProduct.setQuantity(clothProduct.getQuantity() + quantityToRemove);
+            System.out.println("You removed: " + quantityToRemove + ", " + product.getName());
         }
+    }
+
+    public float sumOrder() {
+        float sum = 0.0f;
+        for (ClothProduct clothProduct : productList.values()) {
+            sum += clothProduct.getPrice() * clothProduct.getQuantity();
+        }
+        return sum;
     }
 
     public void productList() {
@@ -70,7 +83,7 @@ public class ClothService {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Cart of shop client: " + client + "\n");
+        sb.append("\nCart of shop client: " + client + "\n");
         sb.append("Shopping cart: \n");
         productList.forEach((Integer, clothProduct) -> {
             sb.append(clothProduct).append("\n");
