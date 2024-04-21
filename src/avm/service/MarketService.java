@@ -65,13 +65,12 @@ public class MarketService {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Cart of client: " + client + "\n");
-        sb.append("shopping cart: \n");
+        sb.append("Shopping cart: \n");
         productList.forEach((Integer, marketProduct) -> {
             sb.append(marketProduct).append("\n");
         });
         return sb.toString();
     }
-
 
     public void productList() {
         System.out.println(marketRepository);

@@ -23,7 +23,7 @@ public class ShopController {
         int quantity;
         int id;
         do {
-            System.out.println("Cloth Shop: [1]show product list, [2]add, [3]remove, [4]print, [5]back: ");
+            System.out.println("Cloth Shop: [1] show product list, [2] add, [3] remove, [4] print, [0]back: ");
             cdm = scanner.nextLine().charAt(0);
             switch (cdm) {
                 case '1':
@@ -58,11 +58,11 @@ public class ShopController {
                 case '4':
                     System.out.println(service);
                     break;
-                case '5':
+                case '0':
                     break;
                 default:
                     System.out.println("Unrecognized command:" + cdm);
             }
-        }while (cdm != '6');
+        }while (cdm != '0');
     }
 }

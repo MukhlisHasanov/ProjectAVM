@@ -23,6 +23,6 @@ public class MarketProduct extends BaseProduct {
 
     @Override
     public String toString() {
-        return "[" + id + ", " + name + ", " + price + ", " + quantity + ']';
+        return "[id: " + id + ", Product: " + name + ", " + price + " EUR, Qua-ty" + quantity + "]";
     }
 }

@@ -49,7 +49,7 @@ public class ClothRepository {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Cloth Repository:\n");
-        clothMap.forEach(Integer, clothMap) -> {
+        clothMap.forEach((Integer, clothProduct) -> {
             sb.append(clothProduct).append("\n");
         });
         return sb.toString();

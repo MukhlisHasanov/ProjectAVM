@@ -36,8 +36,8 @@ public class Client {
 
     @Override
     public String toString() {
-        return  "[name='" + name + '\'' +
-                ", id=" + id +
-                ", age=" + age + ']';
+        return  name +
+                ", id= " + id +
+                ", age= " + age + ']';
     }
 }

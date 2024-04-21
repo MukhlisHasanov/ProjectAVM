@@ -82,7 +82,7 @@ public class ClothService {
         StringBuilder sb = new StringBuilder();
         sb.append("Cart of shop client: " + client + "\n");
         sb.append(("shopping cart: \n"));
-        productList.forEach(Integer, clothProduct) -> {
+        productList.forEach((Integer, clothProduct) -> {
             sb.append(clothProduct).append("\n");
         });
         return sb.toString();
