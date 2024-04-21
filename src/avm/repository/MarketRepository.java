@@ -22,10 +22,6 @@ public class MarketRepository {
         marketMap.remove(id);
     }
 
-//    public Collection<MarketProduct> values() {
-//        return marketMap.values();
-//    }
-
     public void initMarket() {
         List<MarketProduct> marketProducts = new ArrayList<>(List.of(
                 new MarketProduct("Samsung 34", 800, 50),
