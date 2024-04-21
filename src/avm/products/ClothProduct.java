@@ -37,11 +37,6 @@ public class ClothProduct extends BaseProduct {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    public void remove(int id) {
-}
-public void update(int quantity){
-
-}
 
 //    @Override
 //    public String toString() {

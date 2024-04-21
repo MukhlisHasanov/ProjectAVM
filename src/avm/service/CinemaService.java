@@ -1,79 +1,72 @@
 package avm.service;
-/**
- * AIT-TR, Cohort 42.1
- * Project AVM/ClothShop
- * @author Valerian
- * @version 20-04-24
- */
 
-
-import avm.repository.ClothRepository;
-import avm.products.ClothProduct;
+import avm.products.MovieProduct;
 import general.Client;
 import java.util.HashMap;
 import java.util.Map;
+import avm.repository.MovieRepository;
 
-public class ClothService {
+public class CinemaService {
     private Client client;
-    private ClothRepository clothRepository;
-    Map<Integer, ClothProduct> productList;
+    private MovieRepository movieRepository;
+    Map<Integer, MovieProduct> productList;
 
-    public ClothService(Client client, ClothRepository clothRepository) {
+    public CinemaService(Client client, MovieRepository movieRepository) {
         this.client = client;
-        this.clothRepository = clothRepository;
+        this.movieRepository = movieRepository;
         productList = new HashMap<>();
     }
 
     public boolean addToOrder(int id, int quantity) {
-        ClothProduct clothProduct = clothRepository.get(id);
-        if (clothProduct != null && clothProduct.getQuantity() >= quantity) {
+        MovieProduct movieProduct = movieRepository.get(id);
+        if (movieProduct != null && movieProduct.getQuantity() >= quantity) {
             if (productList.containsKey(id)) {
-                ClothProduct existingProduct = productList.get(id);
+                MovieProduct existingProduct = productList.get(id);
                 existingProduct.setQuantity(existingProduct.getQuantity() + quantity);
             } else {
-                ClothProduct newProduct = new ClothProduct(clothProduct);
+                MovieProduct newProduct = new MovieProduct(movieProduct);
                 newProduct.setQuantity(quantity);
                 newProduct.setId(id);
                 productList.put(id, newProduct);
             }
-            clothProduct.setQuantity(clothProduct.getQuantity() - quantity);
+            movieProduct.setQuantity(movieProduct.getQuantity() - quantity);
             return true;
         }
         return false;
     }
 
-    public boolean removeFromOrder(int id) {
+    public boolean removeFromOrder (int id) {
         if (productList.containsKey(id)) {
             productList.remove(id);
             return true;
         }
-    return false;
-}
-
+        return false;
+    }
     public void removeFromOrder(int id, int quantityToRemove) {
         if (productList.containsKey(id)) {
-            ClothProduct product = productList.get(id);
+            MovieProduct product = productList.get(id);
             int currentQuantity = product.getQuantity();
             int newQuantity = currentQuantity - quantityToRemove;
             if (newQuantity <= 0) {
                 productList.remove(id);
             } else {
-                product.setQuantity(newQuantity);
+                product.setQuantity(newQuantity);;
             }
         }
     }
 
+
     public void productList() {
-        System.out.println(clothRepository);
+        System.out.println(movieRepository);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Cart of shop client: " + client + "\n");
+        sb.append("Customer cinema cart: " + client + "\n");
         sb.append("Shopping cart: \n");
-        productList.forEach((Integer, clothProduct) -> {
-            sb.append(clothProduct).append("\n");
+        productList.forEach((Integer, movieProduct) -> {
+            sb.append(movieProduct).append("\n");
         });
         return sb.toString();
     }

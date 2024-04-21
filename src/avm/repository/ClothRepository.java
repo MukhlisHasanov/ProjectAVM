@@ -28,11 +28,11 @@ public class ClothRepository {
 
     public void remove(int id) {
         clothMap.remove(id);
-    }
+    } // TODO maybe need to delete this code
 
     public Collection<ClothProduct> values() {
         return clothMap.values();
-    }
+    } // TODO maybe need to delete this code
 
     public void initCloth() {
         List<ClothProduct> clothProducts = new ArrayList<>(List.of(

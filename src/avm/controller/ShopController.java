@@ -48,13 +48,6 @@ public class ShopController {
                         service.removeFromOrder(id);
                     }
                     break;
-//                case '4':
-//                    System.out.println("Market service: update cart: id & quantity: ");
-//                    input = scanner.nextLine().split("&");
-//                    id = Integer.valueOf(input[0].trim());
-//                    quantity = Integer.valueOf(input[1].trim());
-//                    service.update(id, quantity);
-//                    break;
                 case '4':
                     System.out.println(service);
                     break;

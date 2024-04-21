@@ -2,6 +2,7 @@ package avm.controller;
 
 
 
+import avm.service.CinemaService;
 import avm.service.ClothService;
 import avm.service.MarketService;
 
@@ -10,12 +11,15 @@ import java.util.Scanner;
 public class AvmController {
     private final MarketService marketService;
     private final ClothService clothService;
+    private final CinemaService cinemaService;
     private final Scanner scanner;
 
     public AvmController(final MarketService marketService,
-                         final ClothService clothService) {
+                         final ClothService clothService,
+                         final CinemaService cinemaService) {
         this.marketService = marketService;
         this.clothService = clothService;
+        this.cinemaService = cinemaService;
         this.scanner = new Scanner(System.in);
     }
 
@@ -23,6 +27,7 @@ public class AvmController {
         char cmd;
         MarketController marketController = new MarketController(marketService, scanner);
         ShopController shopController = new ShopController(clothService, scanner);
+        CinemaController cinemaController = new CinemaController(cinemaService, scanner);
         do {
             System.out.println("Choose service: [h]ypermarket, [c]afe, cloth[s]hop, c[i]nema, e[x]it: ");
             cmd = scanner.nextLine().charAt(0);
@@ -38,6 +43,7 @@ public class AvmController {
                     System.out.println("Welcome to AVM Cloth Shop!");
                     break;
                 case 'i':
+                    cinemaController.run();
                     System.out.println("Welcome to AVM Cinema!");
                     break;
                 case 'x':
