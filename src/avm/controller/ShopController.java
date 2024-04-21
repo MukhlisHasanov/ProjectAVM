@@ -22,22 +22,28 @@ public class ShopController {
         String[] input;
         int quantity;
         int id;
+        int size;
         do {
-            System.out.println("Cloth Shop: [1] show product list, [2] add, [3] remove, [4] print, [0]back: ");
+            System.out.println("Cloth Shop:\n[l] --> show clothes list,\n" +
+                    "[a] --> add cloth to shopping cart\n" +
+                    "[r] --> remove cloth from shopping cart\n" +
+                    "[p] --> show shopping cart\n" +
+                    "[b] --> back to previous menu");
             cdm = scanner.nextLine().charAt(0);
             switch (cdm) {
-                case '1':
+                case 'l':
                     service.productList();
                     break;
-                case '2':
-                    System.out.print("Market service: add to cart: id & quantity: ");
+                case 'a':
+                    System.out.print("Cloth Shop: Please enter values of cloth for adding.\nValues: 'id' & 'quantity': ");
                     input = scanner.nextLine().split("&");
                     id = Integer.valueOf(input[0].trim());
                     quantity = Integer.valueOf(input[1].trim());
-                    service.addToOrder(id, quantity);
+                    size = Integer.valueOf(input[2].trim());
+                    service.addToOrder(id, quantity, size);
                     break;
-                case '3':
-                    System.out.println("Market service: remove from cart: id & quantity: ");
+                case 'r':
+                    System.out.println("Cloth Shop: Please enter values of cloth for adding.\nValues: 'id' & 'quantity': ");
                     input = scanner.nextLine().split("&");
                     if (input.length > 1) {
                         id = Integer.valueOf(input[0].trim());
@@ -48,15 +54,15 @@ public class ShopController {
                         service.removeFromOrder(id);
                     }
                     break;
-                case '4':
+                case 'p':
                     System.out.println(service);
                     System.out.println("Amount to be paid: " + service.sumOrder() + " EUR" + "\n");
                     break;
-                case '0':
+                case 'b':
                     break;
                 default:
-                    System.out.println("Unrecognized command:" + cdm);
+                    System.out.println("Unrecognized command: " + cdm);
             }
-        }while (cdm != '0');
+        }while (cdm != 'b');
     }
 }

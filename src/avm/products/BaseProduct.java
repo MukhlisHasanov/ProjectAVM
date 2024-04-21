@@ -1,5 +1,11 @@
 package avm.products;
 
+/** AIT-TR, cohort 42.1, Java Basic, Project AVM/General
+ * @author Andrey Hein
+ * @version Apr-2024
+ */
+
+// This is base class from future product classes
 public class BaseProduct {
     protected int id;
     protected String name;
@@ -28,6 +34,8 @@ public class BaseProduct {
 
     @Override
     public String toString() {
-        return "product= [" + id + ", " + name + ", " + price + ", " + ']';
+        return "[id: " + id +
+                ", Product: " + name +
+                ", Price: " + price + " EUR]";
     }
 }

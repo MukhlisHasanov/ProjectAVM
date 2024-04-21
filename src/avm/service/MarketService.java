@@ -30,7 +30,7 @@ public class MarketService {
                 productList.put(id, newProduct);
             }
             marketProduct.setQuantity(marketProduct.getQuantity() - quantity);
-            System.out.println("You added: " + quantity + ", " + marketProduct.getName() + ".");
+            System.out.println("You added: " + quantity + " pcs, " + marketProduct.getName() + " to shopping cart");
             return true;
         }
         return false;
@@ -43,7 +43,7 @@ public class MarketService {
             int currentQuantity = product.getQuantity();
             productList.remove(id);
             marketProduct.setQuantity(marketProduct.getQuantity() + currentQuantity);
-            System.out.println("You removed: " + currentQuantity + ", " + product.getName());
+            System.out.println("You removed: " + currentQuantity + " pcs, " + product.getName() + " from shopping cart");
             return true;
         }
         return false;
@@ -62,7 +62,7 @@ public class MarketService {
                 product.setQuantity(newQuantity);
             }
             marketProduct.setQuantity(marketProduct.getQuantity() + quantityToRemove);
-            System.out.println("You removed: " + quantityToRemove + ", " + product.getName());
+            System.out.println("You removed: " + currentQuantity + " pcs, " + product.getName() + " from shopping cart");
         }
     }
 
@@ -74,6 +74,10 @@ public class MarketService {
         return sum;
     }
 
+    public void productList() {
+        System.out.println(marketRepository);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -83,9 +87,5 @@ public class MarketService {
             sb.append(marketProduct).append("\n");
         });
         return sb.toString();
-    }
-
-    public void productList() {
-        System.out.println(marketRepository);
     }
 }

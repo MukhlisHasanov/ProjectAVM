@@ -40,7 +40,7 @@ public class ClientRepository {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Client list: \n");
+        sb.append("\nClient list: \n");
         clientMap.forEach((Integer, client) -> {
             sb.append(client).append("\n");
         });

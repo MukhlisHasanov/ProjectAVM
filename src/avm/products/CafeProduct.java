@@ -1,16 +1,22 @@
 package avm.products;
 
-public class MarketProduct extends BaseProduct {
+/** AIT-TR, cohort 42.1, Java Basic, Project AVM/Cafe
+ * @author Alexander Germanow
+ * @version Apr-2024
+ */
+
+// In this class we show the methods associated with the cafe class
+public class CafeProduct extends BaseProduct {
     private int quantity;
     private static int idCounter = 0;
 
-    public MarketProduct(String name, float price, int quantity) {
+    public CafeProduct(String name, float price, int quantity) {
         super(name, price);
         this.quantity = quantity;
         this.id = ++idCounter;
     }
 
-    public MarketProduct(MarketProduct product) {
+    public CafeProduct(CafeProduct product) {
         super(product.getName(), product.getPrice());
         this.quantity = product.getQuantity();
     }

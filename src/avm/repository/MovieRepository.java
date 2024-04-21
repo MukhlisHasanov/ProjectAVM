@@ -49,7 +49,7 @@ public class MovieRepository {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Movie Repository:\n");
+        sb.append("\nMovie Repository:\n");
         movieMap.forEach((Integer, movieProduct) -> {
             sb.append(movieProduct).append("\n");
         });

@@ -1,13 +1,13 @@
 package avm.controller;
 
+import avm.service.CafeService;
 import java.util.Scanner;
-import avm.service.CinemaService;
 
-public class CinemaController {
-    private CinemaService service;
+public class CafeController {
+    private CafeService service;
     private Scanner scanner;
 
-    public CinemaController (CinemaService service, Scanner scanner) {
+    public CafeController(CafeService service, Scanner scanner) {
         this.service = service;
         this.scanner = scanner;
     }
@@ -18,10 +18,10 @@ public class CinemaController {
         int quantity;
         int id;
         do {
-            System.out.println("Cinema: Please enter the command:\n[l] --> movie list\n" +
-                    "[a] --> add ticket to ticket cart\n" +
-                    "[r] --> remove ticket from ticket cart\n" +
-                    "[p] --> show ticket cart\n" +
+            System.out.println("Cafe:\n[l] --> show menu,\n" +
+                    "[a] --> add product to order\n" +
+                    "[r] --> remove product from order\n" +
+                    "[p] --> show order list\n" +
                     "[b] --> back to previous menu");
             cmd = scanner.nextLine().charAt(0);
             switch (cmd) {
@@ -29,14 +29,14 @@ public class CinemaController {
                     service.productList();
                     break;
                 case 'a':
-                    System.out.println("Cinema: Please enter values of ticket for adding.\nValues: 'id' & 'quantity': ");
+                    System.out.print("Cafe: Please enter values of products for adding.\nValues: 'id' & 'quantity': ");
                     input = scanner.nextLine().split("&");
                     id = Integer.valueOf(input[0].trim());
                     quantity = Integer.valueOf(input[1].trim());
-                    service.addToOrder(id,quantity);
+                    service.addToOrder(id, quantity);
                     break;
                 case 'r':
-                    System.out.println("Cinema: Please enter values of ticket for adding.\nValues: 'id' & 'quantity': ");
+                    System.out.print("Cafe: Please enter values of products for removing.\nValues: 'id' & 'quantity': ");
                     input = scanner.nextLine().split("&");
                     if (input.length > 1) {
                         id = Integer.valueOf(input[0].trim());

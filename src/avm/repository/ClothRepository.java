@@ -47,7 +47,7 @@ public class ClothRepository {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Cloth Repository:\n");
+        sb.append("\nCloth Repository:\n");
         clothMap.forEach((Integer, clothProduct) -> {
             sb.append(clothProduct).append("\n");
         });

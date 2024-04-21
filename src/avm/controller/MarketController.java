@@ -18,21 +18,25 @@ public class MarketController {
         int quantity;
         int id;
         do {
-            System.out.print("Market service: [1] show product list; operations with shopping cart: [2] add, [3] remove, [4] print, [0] back: ");
+            System.out.println("Hypermarket:\n[l] --> show product list,\n" +
+                    "[a] --> add product to shopping cart\n" +
+                    "[r] --> remove product from shopping cart\n" +
+                    "[p] --> show shopping cart\n" +
+                    "[b] --> back to previous menu");
             cmd = scanner.nextLine().charAt(0);
             switch (cmd) {
-                case '1':
+                case 'l':
                     service.productList();
                     break;
-                case '2':
-                    System.out.print("Market service: add to cart: id & quantity: ");
+                case 'a':
+                    System.out.print("Hypermarket: Please enter values of products for adding.\nValues: 'id' & 'quantity': ");
                     input = scanner.nextLine().split("&");
                     id = Integer.valueOf(input[0].trim());
                     quantity = Integer.valueOf(input[1].trim());
                     service.addToOrder(id, quantity);
                     break;
-                case '3':
-                    System.out.print("Market service: remove from cart: id & quantity: ");
+                case 'r':
+                    System.out.print("Hypermarket: Please enter values of products for removing.\nValues: 'id' & 'quantity': ");
                     input = scanner.nextLine().split("&");
                     if (input.length > 1) {
                         id = Integer.valueOf(input[0].trim());
@@ -43,15 +47,15 @@ public class MarketController {
                         service.removeFromOrder(id);
                     }
                     break;
-                case '4':
+                case 'p':
                     System.out.println(service);
                     System.out.println("Amount to be paid: " + service.sumOrder() + " EUR" + "\n");
                     break;
-                case '0':
+                case 'b':
                     break;
                 default:
                     System.out.println("Unrecognized command: " + cmd);
             }
-        } while (cmd != '0');
+        } while (cmd != 'b');
     }
 }
