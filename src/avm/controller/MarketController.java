@@ -52,8 +52,7 @@ public class MarketController {
 //                    service.updateOrder(id, quantity);
 //                    break;
                 case '4':
-                    System.out.println(service);
-                    System.out.println("Summa: " + service.sumOrder());
+                    System.out.println(service);;
                     break;
                 case '0':
                     break;
