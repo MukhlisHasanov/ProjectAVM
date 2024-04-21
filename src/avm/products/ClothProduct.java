@@ -9,11 +9,13 @@ package avm.products;
 public class ClothProduct extends BaseProduct {
     private int size;
     private int quantity;
+    private static int idCounter = 0;
 
     public ClothProduct(String name, float price, int size, int quantity) {
         super(name, price);
         this.size = size;
         this.quantity = quantity;
+        this.id = ++idCounter;
     }
 
     public ClothProduct(ClothProduct product) {

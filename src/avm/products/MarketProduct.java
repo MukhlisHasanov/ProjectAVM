@@ -2,9 +2,12 @@ package avm.products;
 
 public class MarketProduct extends BaseProduct {
     private int quantity;
+    private static int idCounter = 0;
+
     public MarketProduct(String name, float price, int quantity) {
         super(name, price);
         this.quantity = quantity;
+        this.id = ++idCounter;
     }
 
     public MarketProduct(MarketProduct product) {
