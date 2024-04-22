@@ -7,7 +7,7 @@ package avm.products;
  */
 
 // This is base class from future product classes
-public class BaseProduct {
+public abstract class BaseProduct {
     protected int id;
     protected String name;
     protected float price;
