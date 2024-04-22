@@ -49,20 +49,7 @@ public class CafeController {
                     }
                     break;
                 case 'r':
-                    System.out.print("\nCafe: Please enter values of products for removing." +
-                            "\n[0] --> back to previous menu\nValues: 'id' & 'quantity': ");
-                    input = scanner.nextLine().split("&");
-                    if (input.length > 1) {
-                        id = Integer.valueOf(input[0].trim());
-                        quantity = Integer.valueOf(input[1].trim());
-                        service.removeFromOrder(id, quantity);
-                    } else {
-                        if (Integer.valueOf(input[0].trim())==0) {
-                            break;
-                        }
-                        id = Integer.valueOf(input[0].trim());
-                        service.removeFromOrder(id);
-                    }
+                    System.out.println("We apologize, but we cannot take your goods back");
                     break;
                 case 'p':
                     System.out.println(service);
