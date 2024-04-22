@@ -9,6 +9,11 @@ import avm.service.CinemaService;
 import avm.service.ClothService;
 import avm.service.MarketService;
 
+/**
+ * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Hypermarket
+ * @author Mukhlis
+ * @version Apr-2024
+ */
 public class Avm {
     public static void main(String[] args) {
         ClientRepository clientRepository = new ClientRepository();

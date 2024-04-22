@@ -1,5 +1,12 @@
 package avm.products;
 
+/**
+ * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Cinema
+ * @author Rodion
+ * @version Apr-2024
+ */
+
+// In this class we show the methods associated with the movie class
 public class MovieProduct extends BaseProduct{
     private int quantity;
     private String genre;
@@ -27,9 +34,10 @@ public class MovieProduct extends BaseProduct{
 
     @Override
     public String toString() {
-        return "product= [" + id + ", "
-                + name + ", "
-                + price + ", "
-                + quantity + ']';
+        return "[id: " + id +
+                ", Genre: " + genre +
+                ", Movie: " + name +
+                ", Price: " + price + " EUR, " +
+                "Quan-ty: " + quantity + "]";
     }
 }

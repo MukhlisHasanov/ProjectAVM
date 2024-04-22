@@ -6,6 +6,11 @@ import avm.products.Client;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Hypermarket
+ * @author Mukhlis
+ * @version Apr-2024
+ */
 public class MarketService {
     private Client client;
     private MarketRepository marketRepository;
@@ -30,7 +35,7 @@ public class MarketService {
                 productList.put(id, newProduct);
             }
             marketProduct.setQuantity(marketProduct.getQuantity() - quantity);
-            System.out.println("You added: " + quantity + " pcs, " + marketProduct.getName() + " to shopping cart");
+            System.out.println("You added: " + quantity + " pcs of " + marketProduct.getName() + " to shopping cart");
             return true;
         }
         return false;
@@ -43,7 +48,7 @@ public class MarketService {
             int currentQuantity = product.getQuantity();
             productList.remove(id);
             marketProduct.setQuantity(marketProduct.getQuantity() + currentQuantity);
-            System.out.println("You removed: " + currentQuantity + " pcs, " + product.getName() + " from shopping cart");
+            System.out.println("You removed: " + currentQuantity + " pcs of " + product.getName() + " from shopping cart");
             return true;
         }
         return false;
@@ -62,7 +67,7 @@ public class MarketService {
                 product.setQuantity(newQuantity);
             }
             marketProduct.setQuantity(marketProduct.getQuantity() + quantityToRemove);
-            System.out.println("You removed: " + currentQuantity + " pcs, " + product.getName() + " from shopping cart");
+            System.out.println("You removed: " + currentQuantity + " pcs of " + product.getName() + " from shopping cart");
         }
     }
 

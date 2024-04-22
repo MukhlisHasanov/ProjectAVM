@@ -1,5 +1,12 @@
 package avm.products;
 
+/**
+ * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Hypermarket
+ * @author Mukhlis/Andrey
+ * @version Apr-2024
+ */
+
+// In this class we show the methods associated with the market products class
 public class MarketProduct extends BaseProduct {
     private int quantity;
     private static int idCounter = 0;
@@ -27,7 +34,7 @@ public class MarketProduct extends BaseProduct {
     public String toString() {
         return "[id: " + id +
                 ", Product: " + name +
-                ", " + price + " EUR, " +
-                "Qua-ty: " + quantity + "]";
+                ", Price" + price + " EUR, " +
+                "Quan-ty: " + quantity + "]";
     }
 }

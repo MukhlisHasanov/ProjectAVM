@@ -1,15 +1,13 @@
 package avm.repository;
-/**
- * AIT-TR, Cohort 42.1
- * Project AVM/ClothShop
- * @author Valerian
- * @version 20-04-24
- */
 
 import avm.products.ClothProduct;
-
 import java.util.*;
 
+/**
+ * AIT-TR, Cohort 42.1, Java Basic, Project AVM/ClothShop
+ * @author Valerian
+ * @version Apr-2024
+ */
 public class ClothRepository {
     private Map<Integer, ClothProduct> clothMap;
 
@@ -27,11 +25,11 @@ public class ClothRepository {
 
     public void remove(int id) {
         clothMap.remove(id);
-    } // TODO maybe need to delete this code
+    }
 
     public Collection<ClothProduct> values() {
         return clothMap.values();
-    } // TODO maybe need to delete this code
+    }
 
     public void initCloth() {
         List<ClothProduct> clothProducts = new ArrayList<>(List.of(

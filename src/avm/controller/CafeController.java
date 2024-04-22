@@ -3,6 +3,11 @@ package avm.controller;
 import avm.service.CafeService;
 import java.util.Scanner;
 
+/**
+ * AIT-TR, cohort 42.1, Java Basic, Project AVM/Cafe
+ * @author Alexander Germanow
+ * @version Apr-2024
+ */
 public class CafeController {
     private CafeService service;
     private Scanner scanner;
@@ -18,31 +23,43 @@ public class CafeController {
         int quantity;
         int id;
         do {
-            System.out.println("Cafe:\n[l] --> show menu,\n" +
+            System.out.println("\nCafe: Please enter the command:\n" +
+                    "[l] --> show menu\n" +
                     "[a] --> add product to order\n" +
                     "[r] --> remove product from order\n" +
                     "[p] --> show order list\n" +
-                    "[b] --> back to previous menu");
+                    "[b] --> back to main menu");
             cmd = scanner.nextLine().charAt(0);
             switch (cmd) {
                 case 'l':
                     service.productList();
                     break;
                 case 'a':
-                    System.out.print("Cafe: Please enter values of products for adding.\nValues: 'id' & 'quantity': ");
+                    System.out.print("\nCafe: Please enter values of products for adding." +
+                            "\n[0] --> back to previous menu\nValues: 'id' & 'quantity': ");
                     input = scanner.nextLine().split("&");
-                    id = Integer.valueOf(input[0].trim());
-                    quantity = Integer.valueOf(input[1].trim());
-                    service.addToOrder(id, quantity);
+                    if (input.length > 1) {
+                        id = Integer.valueOf(input[0].trim());
+                        quantity = Integer.valueOf(input[1].trim());
+                        service.addToOrder(id, quantity);
+                    } else {
+                        if (Integer.valueOf(input[0].trim())==0) {
+                            break;
+                        }
+                    }
                     break;
                 case 'r':
-                    System.out.print("Cafe: Please enter values of products for removing.\nValues: 'id' & 'quantity': ");
+                    System.out.print("\nCafe: Please enter values of products for removing." +
+                            "\n[0] --> back to previous menu\nValues: 'id' & 'quantity': ");
                     input = scanner.nextLine().split("&");
                     if (input.length > 1) {
                         id = Integer.valueOf(input[0].trim());
                         quantity = Integer.valueOf(input[1].trim());
                         service.removeFromOrder(id, quantity);
                     } else {
+                        if (Integer.valueOf(input[0].trim())==0) {
+                            break;
+                        }
                         id = Integer.valueOf(input[0].trim());
                         service.removeFromOrder(id);
                     }

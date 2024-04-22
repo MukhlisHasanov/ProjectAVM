@@ -1,6 +1,7 @@
 package avm.products;
 
-/** AIT-TR, cohort 42.1, Java Basic, Project AVM/Cafe
+/**
+ * AIT-TR, cohort 42.1, Java Basic, Project AVM/Cafe
  * @author Alexander Germanow
  * @version Apr-2024
  */
@@ -33,7 +34,7 @@ public class CafeProduct extends BaseProduct {
     public String toString() {
         return "[id: " + id +
                 ", Product: " + name +
-                ", " + price + " EUR, " +
-                "Qua-ty: " + quantity + "]";
+                ", Price: " + price + " EUR, " +
+                "Quan-ty: " + quantity + "]";
     }
 }

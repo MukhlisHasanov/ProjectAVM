@@ -3,6 +3,11 @@ package avm.repository;
 import avm.products.CafeProduct;
 import java.util.*;
 
+/**
+ * AIT-TR, cohort 42.1, Java Basic, Project AVM/Cafe
+ * @author Alexander Germanow
+ * @version Apr-2024
+ */
 public class CafeRepository {
     private Map<Integer, CafeProduct> cafeMap;
 
@@ -22,13 +27,12 @@ public class CafeRepository {
         cafeMap.remove(id);
     }
 
-//    public Collection<CafeProduct> values() {
-//        return cafeMap.values();
-//    }
+    public Collection<CafeProduct> values() {
+        return cafeMap.values();
+    }
 
     public void initCafe() {
         List<CafeProduct> cafeProducts = new ArrayList<>(List.of(
-
                 new CafeProduct("Chocolate", 1.5f, 50),
                 new CafeProduct("Strawberry with chocolate", 1.3f, 50),
                 new CafeProduct("Latte macchiate", 2.5f, 50),

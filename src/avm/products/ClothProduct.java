@@ -1,14 +1,14 @@
 package avm.products;
+
 /**
  * AIT-TR, Cohort 42.1, Java Basic, Project AVM/ClothShop
  * @author Valerian
  * @version Apr-2024
  */
 
-// In this class we show the methods associated with the cafe class
+// In this class we show the methods associated with the cloth products class
 public class ClothProduct extends BaseProduct {
-    private int size;
-    private int quantity;
+    private int size, quantity;
     private static int idCounter = 0;
 
     public ClothProduct(String name, float price, int size, int quantity) {
@@ -41,10 +41,10 @@ public class ClothProduct extends BaseProduct {
 
     @Override
     public String toString() {
-        return "[" + id + ", "
-                + name + ", "
-                + size + ", "
-                + price + ", "
-                + quantity + ']';
+        return "[id: " + id +
+                ", Product: " + name +
+                ", Size: " + size +
+                ", Price: " + price + " EUR, " +
+                "Quan-ty: " + quantity + "]";
     }
 }

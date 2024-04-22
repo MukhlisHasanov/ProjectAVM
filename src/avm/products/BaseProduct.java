@@ -1,6 +1,7 @@
 package avm.products;
 
-/** AIT-TR, cohort 42.1, Java Basic, Project AVM/General
+/**
+ * AIT-TR, cohort 42.1, Java Basic, Project AVM/General
  * @author Andrey Hein
  * @version Apr-2024
  */
