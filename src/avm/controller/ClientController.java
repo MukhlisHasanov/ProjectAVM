@@ -31,7 +31,7 @@ public class ClientController {
             if (client != null) {
                 System.out.println("\nHello, " + client.getName() + "!\n");
             } else {
-                System.out.println("ID NOT FOUND! Please check ID or sign up");
+                System.out.println("ID NOT FOUND! Please sign up");
                 return registerNewClient();
             }
         } else if (choice.equals("n")) {

@@ -33,11 +33,11 @@ public class ClothRepository {
 
     public void initCloth() {
         List<ClothProduct> clothProducts = new ArrayList<>(List.of(
-                new ClothProduct("Jeans", 150, 39, 50),
-                new ClothProduct("Esprit", 500, 42, 40),
-                new ClothProduct("Jeans", 90, 38, 30),
-                new ClothProduct("Boss", 150, 44, 50),
-                new ClothProduct("Hilfiger", 9, 45, 20)
+                new ClothProduct("Jeans", 150, 50),
+                new ClothProduct("Esprit", 500, 40),
+                new ClothProduct("Jeans", 90, 30),
+                new ClothProduct("Boss", 150, 50),
+                new ClothProduct("Hilfiger", 9, 20)
         ));
         clothProducts.forEach(clothProduct -> put(clothProduct));
     }

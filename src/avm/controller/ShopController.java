@@ -22,7 +22,6 @@ public class ShopController {
         String[] input;
         int quantity;
         int id;
-        int size;
         do {
             System.out.println("\nCloth Shop: Please enter the command:\n" +
                     "[l] --> show clothes list,\n" +
@@ -42,8 +41,7 @@ public class ShopController {
                     if (input.length > 1) {
                         id = Integer.valueOf(input[0].trim());
                         quantity = Integer.valueOf(input[1].trim());
-                        size = Integer.valueOf(input[2].trim());
-                        service.addToOrder(id, quantity, size);
+                        service.addToOrder(id, quantity);
                     } else {
                         if (Integer.valueOf(input[0].trim())==0) {
                             break;

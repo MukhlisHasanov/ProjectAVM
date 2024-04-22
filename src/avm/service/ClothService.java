@@ -22,7 +22,7 @@ public class ClothService {
         productList = new HashMap<>();
     }
 
-    public boolean addToOrder(int id, int quantity, int size) {
+    public boolean addToOrder(int id, int quantity) {
         ClothProduct clothProduct = clothRepository.get(id);
         if (clothProduct != null && clothProduct.getQuantity() >= quantity) {
             if (productList.containsKey(id)) {
@@ -32,7 +32,6 @@ public class ClothService {
                 ClothProduct newProduct = new ClothProduct(clothProduct);
                 newProduct.setQuantity(quantity);
                 newProduct.setId(id);
-                newProduct.setSize(size);
                 productList.put(id, newProduct);
             }
             clothProduct.setQuantity(clothProduct.getQuantity() - quantity);
