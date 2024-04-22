@@ -17,7 +17,7 @@ public class ShopController {
         this.scanner = scanner;
     }
 
-    public void run() {
+    public boolean run() {
         char cdm;
         String[] input;
         int quantity;
@@ -29,7 +29,7 @@ public class ShopController {
                     "[a] --> add cloth to shopping cart\n" +
                     "[r] --> remove cloth from shopping cart\n" +
                     "[p] --> show shopping cart\n" +
-                    "[b] --> back to main menu");
+                    "[b] --> back to main menu | [x] --> Exit");
             cdm = scanner.nextLine().charAt(0);
             switch (cdm) {
                 case 'l':
@@ -71,9 +71,12 @@ public class ShopController {
                     break;
                 case 'b':
                     break;
+                case 'x':
+                    return false;
                 default:
                     System.out.println("Unrecognized command: " + cdm);
             }
         }while (cdm != 'b');
+        return true;
     }
 }

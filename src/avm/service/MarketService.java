@@ -19,5 +19,4 @@ public class MarketService extends BaseService<MarketProduct, MarketRepository> 
     protected MarketProduct createProduct(MarketProduct product) {
         return new MarketProduct(product);
     }
-
 }

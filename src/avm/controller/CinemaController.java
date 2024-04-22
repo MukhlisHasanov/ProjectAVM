@@ -17,7 +17,7 @@ public class CinemaController {
         this.scanner = scanner;
     }
 
-    public void run() {
+    public boolean run() {
         char cmd;
         String[] input;
         int quantity;
@@ -28,7 +28,7 @@ public class CinemaController {
                     "[a] --> add ticket to ticket cart\n" +
                     "[r] --> remove ticket from ticket cart\n" +
                     "[p] --> show ticket cart\n" +
-                    "[b] --> back to main menu");
+                    "[b] --> back to main menu | [x] --> Exit");
             cmd = scanner.nextLine().charAt(0);
             switch (cmd) {
                 case 'l':
@@ -70,9 +70,12 @@ public class CinemaController {
                     break;
                 case 'b':
                     break;
+                case 'x':
+                    return false;
                 default:
                     System.out.println("Unrecognized command: " + cmd);
             }
         } while (cmd != 'b');
+        return true;
     }
 }

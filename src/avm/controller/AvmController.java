@@ -36,6 +36,7 @@ public class AvmController {
         ShopController shopController = new ShopController(clothService, scanner);
         CinemaController cinemaController = new CinemaController(cinemaService, scanner);
         CafeController cafeController = new CafeController(cafeService, scanner);
+        boolean  controlExit = true;
         do {
             System.out.println("Choose service:\n" +
                     "[h] --> Hypermarket\n" +
@@ -47,19 +48,19 @@ public class AvmController {
             switch (cmd) {
                 case 'h':
                     System.out.println("Welcome to AVM Hypermarket!");
-                    marketController.run();
+                    controlExit = marketController.run();
                     break;
                 case 'c':
                     System.out.println("Welcome to AVM Ice Cafe!");
-                    cafeController.run();
+                    controlExit = cafeController.run();
                     break;
                 case 's':
                     System.out.println("Welcome to AVM Cloth Shop!");
-                    shopController.run();
+                    controlExit = shopController.run();
                     break;
                 case 'i':
                     System.out.println("Welcome to AVM Cinema!");
-                    cinemaController.run();
+                    controlExit = cinemaController.run();
                     break;
                 case 'x':
                     System.out.println("Goodbye!");
@@ -67,7 +68,7 @@ public class AvmController {
                 default:
                     System.out.println("Unrecognized command");
             }
-        } while (cmd != 'x');
+        } while (cmd != 'x' && controlExit);
         System.out.println("Exit from AVM");
     }
 }
