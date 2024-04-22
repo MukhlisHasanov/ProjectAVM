@@ -20,7 +20,8 @@ public class ClientController {
 
     public Client start() {
         System.out.println("Welcome to AVM!");
-        System.out.print("Do you have client account? [y]es, [n]o:");
+        System.out.println(clientRepository);
+        System.out.print("\nDo you have client account? [y]es, [n]o:");
         String choice = scanner.nextLine().toLowerCase();
         if (choice.equals("y")) {
             System.out.print("Enter account ID: ");
