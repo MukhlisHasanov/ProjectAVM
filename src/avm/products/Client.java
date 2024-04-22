@@ -1,11 +1,13 @@
-package general;
+package avm.products;
 
-import java.util.List;
-
+/**
+ * AIT-TR, cohort 42.1, Java Basic, Project AVM/General
+ * @author Andrey Hein
+ * @version Apr-2024
+ */
 public class Client {
-    int id;
+    int id, age;
     String name;
-    int age;
     private static int idCounter = 0;
 
     public Client(String name, int age) {
@@ -26,18 +28,18 @@ public class Client {
         return id;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
+//    public int getAge() {
+//        return age;
+//    }
+//
+//    public void setAge(int age) {
+//        this.age = age;
+//    }
 
     @Override
     public String toString() {
-        return  "[name='" + name + '\'' +
-                ", id=" + id +
-                ", age=" + age + ']';
+        return  "[" + name +
+                ", id: " + id +
+                ", age: " + age + "]";
     }
 }
