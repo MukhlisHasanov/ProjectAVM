@@ -43,7 +43,7 @@ public class MarketController {
                         quantity = Integer.valueOf(input[1].trim());
                         service.addToOrder(id, quantity);
                     } else {
-                        if (Integer.valueOf(input[0].trim())==0) {
+                        if (Integer.valueOf(input[0].trim()) == 0) {
                             break;
                         }
                     }

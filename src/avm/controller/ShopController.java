@@ -37,13 +37,12 @@ public class ShopController {
                     break;
                 case 'a':
                     System.out.print("Cloth Shop: Please enter values of cloth for adding." +
-                            "\n[0] --> back to previous menu\nValues: 'id' & 'quantity' & 'size': ");
+                            "\n[0] --> back to previous menu\nValues: 'id' & 'quantity': ");
                     input = scanner.nextLine().split("&");
                     if (input.length > 1) {
                         id = Integer.valueOf(input[0].trim());
                         quantity = Integer.valueOf(input[1].trim());
-                        size = Integer.valueOf(input[2].trim());
-                        service.addToOrder(id, quantity, size);
+                        service.addToOrder(id, quantity);
                     } else {
                         if (Integer.valueOf(input[0].trim())==0) {
                             break;
