@@ -5,7 +5,7 @@ import java.util.*;
 
 /**
  * AIT-TR, Cohort 42.1, Java Basic, Project AVM/ClothShop
- * @author Valerian
+ * @author Valerian/Alexander
  * @version Apr-2024
  */
 public class ClothRepository {

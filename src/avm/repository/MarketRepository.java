@@ -5,7 +5,7 @@ import java.util.*;
 
 /**
  * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Hypermarket
- * @author Mukhlis
+ * @author Mukhlis/Alexander
  * @version Apr-2024
  */
 public class MarketRepository {
