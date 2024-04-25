@@ -9,6 +9,7 @@ package avm.products;
 // In this class we show the methods associated with the cloth products class
 public class ClothProduct extends BaseProduct {
     private int quantity;
+    private int size;
     private static int idCounter = 0;
 
     public ClothProduct(String name, float price, int quantity) {

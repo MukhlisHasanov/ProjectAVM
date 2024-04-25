@@ -38,13 +38,17 @@ public class ShopController {
                     System.out.print("Cloth Shop: Please enter values of cloth for adding." +
                             "\n[0] --> back to previous menu\nValues: 'id' & 'quantity' & 'size': ");
                     input = scanner.nextLine().split("&");
-                    if (input.length > 1) {
-                        id = Integer.valueOf(input[0].trim());
-                        quantity = Integer.valueOf(input[1].trim());
-                        service.addToOrder(id, quantity);
+                    if (!scanner.equals("&")) {
+                        System.out.println("XXX");
                     } else {
-                        if (Integer.valueOf(input[0].trim())==0) {
-                            break;
+                        if (input.length > 1) {
+                            id = Integer.valueOf(input[0].trim());
+                            quantity = Integer.valueOf(input[1].trim());
+                            service.addToOrder(id, quantity);
+                        } else {
+                            if (Integer.valueOf(input[0].trim()) == 0) {
+                                break;
+                            }
                         }
                     }
                     break;
