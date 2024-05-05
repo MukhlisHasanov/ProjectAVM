@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * AIT-TR, cohort 42.1, Java Basic, Project AVM/General
- * @author Andrey Hein
+ * @author Andrey Hein/Alexander
  * @version Apr-2024
  */
 public class ClientRepository {

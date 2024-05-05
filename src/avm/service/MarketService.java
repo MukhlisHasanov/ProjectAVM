@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Hypermarket
- * @author Mukhlis
+ * @author Mukhlis/Andrey
  * @version Apr-2024
  */
 public class MarketService {
