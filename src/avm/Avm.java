@@ -26,7 +26,7 @@ public class Avm {
         ClothRepository clothRepository = new ClothRepository();
         MovieRepository movieRepository = new MovieRepository();
         CafeRepository cafeRepository = new CafeRepository();
-
+        // Comment #1
         MarketService marketService = new MarketService(client,marketRepository);
         ClothService clothService = new ClothService(client, clothRepository);
         CinemaService cinemaService = new CinemaService(client, movieRepository);
