@@ -17,7 +17,7 @@ public class CafeController {
         this.scanner = scanner;
     }
 
-    public boolean run() {
+    public void run() {
         char cmd;
         String[] input;
         int quantity;
@@ -28,7 +28,7 @@ public class CafeController {
                     "[a] --> add product to order\n" +
                     "[r] --> remove product from order\n" +
                     "[p] --> show order list\n" +
-                    "[b] --> back to main menu | [x] --> Exit");
+                    "[b] --> back to main menu");
             cmd = scanner.nextLine().charAt(0);
             switch (cmd) {
                 case 'l':
@@ -70,12 +70,9 @@ public class CafeController {
                     break;
                 case 'b':
                     break;
-                case 'x':
-                    return false;
                 default:
                     System.out.println("Unrecognized command: " + cmd);
             }
         } while (cmd != 'b');
-        return true;
     }
 }

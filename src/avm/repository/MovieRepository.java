@@ -5,29 +5,30 @@ import java.util.*;
 
 /**
  * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Cinema
- * @author Rodion
+ * @author Rodion/Alexander
  * @version Apr-2024
  */
-public class MovieRepository implements ProductRepository<MovieProduct>{
+public class MovieRepository {
     private Map<Integer, MovieProduct> movieMap;
 
     public MovieRepository() {
         movieMap = new HashMap<>();
     }
 
-    @Override
     public void put(MovieProduct movieProduct) {
         movieMap.put(movieProduct.getId(),movieProduct);
     }
 
-    @Override
     public MovieProduct get(int id) {
         return movieMap.get(id);
     }
 
-    @Override
     public void remove(int id) {
         movieMap.remove(id);
+    }
+
+    public Collection<MovieProduct> values() {
+        return movieMap.values();
     }
 
     public void initMovie() {
@@ -43,7 +44,7 @@ public class MovieRepository implements ProductRepository<MovieProduct>{
                 new MovieProduct("Beethoven2", "Comedy", 10, 200),
                 new MovieProduct("Nu Pogodi", "Animation", 8, 200)
         ));
-        movieProducts.forEach(this::put);
+        movieProducts.forEach(movieProduct -> put(movieProduct));
     }
 
     @Override

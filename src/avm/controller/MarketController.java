@@ -17,7 +17,7 @@ public class MarketController {
         this.scanner = scanner;
     }
 
-    public boolean run() {
+    public void run() {
         char cmd;
         String[] input;
         int quantity;
@@ -28,7 +28,7 @@ public class MarketController {
                     "[a] --> add product to shopping cart\n" +
                     "[r] --> remove product from shopping cart\n" +
                     "[p] --> show shopping cart\n" +
-                    "[b] --> back to main menu | [x] --> Exit");
+                    "[b] --> back to main menu");
             cmd = scanner.nextLine().charAt(0);
             switch (cmd) {
                 case 'l':
@@ -43,7 +43,7 @@ public class MarketController {
                         quantity = Integer.valueOf(input[1].trim());
                         service.addToOrder(id, quantity);
                     } else {
-                        if (Integer.valueOf(input[0].trim()) == 0) {
+                        if (Integer.valueOf(input[0].trim())==0) {
                             break;
                         }
                     }
@@ -70,12 +70,9 @@ public class MarketController {
                     break;
                 case 'b':
                     break;
-                case 'x':
-                    return false;
                 default:
                     System.out.println("Unrecognized command: " + cmd);
             }
-        } while (cmd != 'b' && cmd != 'x');
-        return true;
+        } while (cmd != 'b');
     }
 }

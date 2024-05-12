@@ -10,7 +10,7 @@ import avm.service.ClothService;
 import avm.service.MarketService;
 
 /**
- * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Hypermarket
+ * AIT-TR, Cohort 42.1, Java Basic, Project #1 AVM
  * @author Mukhlis
  * @version Apr-2024
  */

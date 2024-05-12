@@ -8,26 +8,27 @@ import java.util.*;
  * @author Alexander Germanow
  * @version Apr-2024
  */
-public class CafeRepository implements ProductRepository<CafeProduct>{
+public class CafeRepository {
     private Map<Integer, CafeProduct> cafeMap;
 
     public CafeRepository() {
         cafeMap = new HashMap<>();
     }
 
-    @Override
     public void put(CafeProduct cafeProduct) {
         cafeMap.put(cafeProduct.getId(), cafeProduct);
     }
 
-    @Override
     public CafeProduct get(int id) {
         return cafeMap.get(id);
     }
 
-    @Override
     public void remove(int id) {
         cafeMap.remove(id);
+    }
+
+    public Collection<CafeProduct> values() {
+        return cafeMap.values();
     }
 
     public void initCafe() {
@@ -43,7 +44,7 @@ public class CafeRepository implements ProductRepository<CafeProduct>{
                 new CafeProduct("Coffee", 2.5f, 200),
                 new CafeProduct("Espresso", 2.2f, 50)
         ));
-        cafeProducts.forEach(this::put);
+        cafeProducts.forEach(cafeProduct -> put(cafeProduct));
     }
 
     @Override

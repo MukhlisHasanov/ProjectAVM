@@ -17,19 +17,18 @@ public class ShopController {
         this.scanner = scanner;
     }
 
-    public boolean run() {
+    public void run() {
         char cdm;
         String[] input;
         int quantity;
         int id;
-        int size;
         do {
             System.out.println("\nCloth Shop: Please enter the command:\n" +
                     "[l] --> show clothes list,\n" +
                     "[a] --> add cloth to shopping cart\n" +
                     "[r] --> remove cloth from shopping cart\n" +
                     "[p] --> show shopping cart\n" +
-                    "[b] --> back to main menu | [x] --> Exit");
+                    "[b] --> back to main menu");
             cdm = scanner.nextLine().charAt(0);
             switch (cdm) {
                 case 'l':
@@ -37,7 +36,7 @@ public class ShopController {
                     break;
                 case 'a':
                     System.out.print("Cloth Shop: Please enter values of cloth for adding." +
-                            "\n[0] --> back to previous menu\nValues: 'id' & 'quantity': ");
+                            "\n[0] --> back to previous menu\nValues: 'id' & 'quantity' & 'size': ");
                     input = scanner.nextLine().split("&");
                     if (input.length > 1) {
                         id = Integer.valueOf(input[0].trim());
@@ -71,12 +70,9 @@ public class ShopController {
                     break;
                 case 'b':
                     break;
-                case 'x':
-                    return false;
                 default:
                     System.out.println("Unrecognized command: " + cdm);
             }
         }while (cdm != 'b');
-        return true;
     }
 }

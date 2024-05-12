@@ -5,27 +5,24 @@ import java.util.*;
 
 /**
  * AIT-TR, Cohort 42.1, Java Basic, Project AVM/Hypermarket
- * @author Mukhlis
+ * @author Mukhlis/Alexander
  * @version Apr-2024
  */
-public class MarketRepository implements ProductRepository<MarketProduct>{
+public class MarketRepository {
     private Map<Integer, MarketProduct> marketMap;
 
     public MarketRepository() {
         marketMap = new HashMap<>();
     }
 
-    @Override
     public void put(MarketProduct marketProduct) {
         marketMap.put(marketProduct.getId(), marketProduct);
     }
 
-    @Override
     public MarketProduct get(int id) {
         return marketMap.get(id);
     }
 
-    @Override
     public void remove(int id) {
         marketMap.remove(id);
     }
@@ -49,7 +46,7 @@ public class MarketRepository implements ProductRepository<MarketProduct>{
                 new MarketProduct("Soap", 1.3f, 70),
                 new MarketProduct("Shampoo", 2.4f, 30)
         ));
-        marketProducts.forEach(this::put);
+        marketProducts.forEach(marketProduct -> put(marketProduct));
     }
 
     @Override
