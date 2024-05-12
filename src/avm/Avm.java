@@ -31,7 +31,7 @@ public class Avm {
         ClothService clothService = new ClothService(client, clothRepository);
         CinemaService cinemaService = new CinemaService(client, movieRepository);
         CafeService cafeService = new CafeService(client,cafeRepository);
-
+// test 2
         marketRepository.initMarket();
         clothRepository.initCloth();
         movieRepository.initMovie();
